@@ -266,7 +266,6 @@ form .btn{width:100%}
           </div>
         </label>
         <div class="err" id="err" role="alert"></div>
-        <div class="bonus"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-1.5-3-5-3.5-5-1.2C7 8 9.5 8 12 8zm0 0c1.5-3 5-3.5 5-1.2C17 8 14.5 8 12 8z"/></svg></span><div><span class="tg">Bonus gratis</span><b>Calculadora Financiera</b><span class="d">Proyecta tus escenarios de inversión. Te llega al correo al registrarte.</span></div></div>
         <button class="btn" type="submit" id="send">Quiero reservar mi lugar</button>
         <p class="priv">Tus datos están seguros. Solo los uso para enviarte el acceso.</p>
       </form>
@@ -285,7 +284,7 @@ form .btn{width:100%}
 
   <section class="stage" aria-label="Clase">
     <div class="screen tall" id="screen"></div>
-    <div class="below">
+    <div class="below" id="below">
       <span id="below1"></span>
       <span>Usa audífonos y conéctate con buena señal de internet.</span>
     </div>
@@ -338,7 +337,7 @@ form .btn{width:100%}
   <a class="btn" id="mbBtn" href="#"></a>
 </div>
 
-<footer class="foot">© <span id="yr">2026</span> Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· v14</span></footer>
+<footer class="foot">© <span id="yr">2026</span> Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· v16</span></footer>
 
 <script>
 /* ======================= CONFIGURACIÓN (solo edita aquí) ======================= */
@@ -355,14 +354,15 @@ const CONFIG = {
   // ⚠️ Ponlo en false antes de publicar.
   MODO_REVISION: false,
   // LANZAMIENTO POR COMUNIDAD: fecha de la clase (AAAA-MM-DD). El enlace ?comunidad=1 abre esta clase sin pedir registro.
-  FECHA_LANZAMIENTO: "2026-10-15",
+  FECHA_LANZAMIENTO: "2026-10-15",   // próximo lanzamiento: cambiar SOLO esta fecha y quien se registró antes vuelve a ver el formulario limpio
+  PEDIR_WHATSAPP: false,             // false = el formulario no pide WhatsApp (ya está en la comunidad)
   // URL de Google Apps Script que guarda el registro en el Sheet (termina en /exec)
   SHEET_URL: "https://script.google.com/macros/s/AKfycbwdsqAvt7qFhJuZEwRt924vOOiC7yQlxNDVxgj-CXKDgUcn3w_CnQz9Kvg_LIl-1lwdng/exec",
   // Página de gracias. Mientras esté vacía, después del registro se muestra la sala de la clase.
   GRACIAS_URL: "",
   // Mensaje al terminar la clase (el título va precedido del nombre de la persona)
-  CIERRE_TITULO: "te doy la bienvenida a la Ruta Excedente 8S",
-  CIERRE_TEXTO: "Gracias por acompañarme en esta clase. Mañana te espero en el equipo: revisa tu WhatsApp, ahí te envío todo."
+  CIERRE_TITULO: "te doy la bienvenida formalmente a la Ruta Excedente 8S",
+  CIERRE_TEXTO: "Gracias por acompañarme en esta clase. Mañana te espero para formar parte del equipo: revisa tu correo y la comunidad de WhatsApp, ahí te envío todo."
 };
 /* =============================================================================== */
 
@@ -455,7 +455,7 @@ if (P === "cierre") { START = Date.now() - 2 * 86400e3; }
 const COUNTRIES = [["Venezuela","+58"],["Colombia","+57"],["Perú","+51"],["México","+52"],["Argentina","+54"],["Chile","+56"],["Ecuador","+593"],["Panamá","+507"],["Rep. Dominicana","+1"],["Estados Unidos","+1"],["España","+34"],["Costa Rica","+506"],["Uruguay","+598"],["Paraguay","+595"],["Bolivia","+591"],["Guatemala","+502"],["Honduras","+504"],["El Salvador","+503"],["Nicaragua","+505"],["Puerto Rico","+1"],["Canadá","+1"],["Brasil","+55"],["Italia","+39"],["Portugal","+351"],["Alemania","+49"],["Reino Unido","+44"],["Francia","+33"]];
 const sel = $("f-cod");
 COUNTRIES.forEach(([n, c], i) => { const o = document.createElement("option"); o.value = i; o.textContent = `${c} ${n}`; sel.appendChild(o); });
-if (urlTel.length >= 8) $("telWrap").hidden = true;
+if (urlTel.length >= 8 || !CONFIG.PEDIR_WHATSAPP) $("telWrap").hidden = true;
 
 function fillRegHeader(){
   $("regWhen").innerHTML = `🇨🇴 <b>${hm(CONFIG.HORA_CLASE)}</b> Colombia · 🇻🇪 <b>${hm(CONFIG.HORA_CLASE + 1)}</b> Venezuela`;
@@ -589,6 +589,7 @@ function tick(){
     teardown(); state = s; setStatus(s); ({ wait: renderWait, live: renderLive, closed: renderClosed })[s]();
     // "Lo que vas a descubrir" solo antes de la clase; en vivo y al terminar queda solo el perfil
     const learn = document.querySelector(".learn"); if (learn) learn.style.display = s === "wait" ? "" : "none";
+    const bl = $("below"); if (bl) bl.style.display = s === "closed" ? "none" : "";
   }
   if (s === "wait") {
     const left = Math.max(0, Math.floor((START - Date.now()) / 1000));
