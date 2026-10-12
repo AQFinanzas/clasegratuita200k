@@ -337,7 +337,7 @@ form .btn{width:100%}
   <a class="btn" id="mbBtn" href="#"></a>
 </div>
 
-<footer class="foot">© <span id="yr">2026</span> Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· v16</span></footer>
+<footer class="foot">© <span id="yr">2026</span> Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· v17</span></footer>
 
 <script>
 /* ======================= CONFIGURACIÓN (solo edita aquí) ======================= */
@@ -434,7 +434,10 @@ if (forceRoom && qs.get("nombre") && !(CONFIG.MODO_REVISION && !qs.get("prueba")
 // todo registro nuevo queda para esa fecha
 const lanzamientoActivo = validDate(CONFIG.FECHA_LANZAMIENTO) && Date.now() < atCol(CONFIG.FECHA_LANZAMIENTO, CONFIG.HORA_CLASE) + DUR * 1000;
 const viaLanzamiento = validDate(CONFIG.FECHA_LANZAMIENTO) && (qs.get("lanzamiento") === "1" || (lanzamientoActivo && !qs.get("dia") && !qs.get("fecha")));
-if (viaLanzamiento && reg && reg.fecha !== CONFIG.FECHA_LANZAMIENTO) reg = null;
+if (viaLanzamiento && reg && reg.fecha !== CONFIG.FECHA_LANZAMIENTO) {
+  // llega con su enlace personal (correo) sin fecha: conserva su nombre y lo pasa a la clase del lanzamiento
+  if (forceRoom && reg.nombre) { reg.fecha = CONFIG.FECHA_LANZAMIENTO; setReg(reg); } else reg = null;
+}
 // enlace de la comunidad: ?comunidad=1 → entra directo a la clase del lanzamiento, sin registro
 const viaComunidad = qs.get("comunidad") === "1" && validDate(CONFIG.FECHA_LANZAMIENTO);
 if (viaComunidad) {
