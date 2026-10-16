@@ -9,5 +9,6 @@ No poner etiqueta "REEL" arriba a la derecha (choca con el ícono de Instagram).
 | 2026-10-14 | Carrusel (7) | No necesitas cuenta en EE. UU. para invertir en Wall Street | Azul palabra gigante (USA) | 2026-10-14-fondeo |
 | 2026-10-16 17:00 | Reel | Mentalidad: el dinero como conflicto en casa | Cita B/N oscuro (foto seria escenario, play naranja abajo a la izquierda) | 2026-10-16-reel-mentalidad |
 | 2026-10-16 20:00 | Carrusel (7) | Ahorrar vs invertir (tortuga → cohete) | Blanco limpio sin foto en portada; foto solo en cierre | 2026-10-19-ahorrar-vs-invertir |
+| (pendiente) | Reel | Las 3 causas de tus problemas financieros | Cinematográfico oscuro, foto IA seria | reel-3-causas |
 
 Próxima pieza: usar una familia oscura o azul para alternar (la última fue clara).
