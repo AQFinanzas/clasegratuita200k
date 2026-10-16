@@ -2,3 +2,5 @@ fotos/ia/09-serio-oficina-noche.jpg 200
 fotos/ia/09-serio-oficina-noche.jpg: JPEG image data, Exif Standard: [TIFF image data, little-endian, direntries=6, orientation=upper-left, xresolution=86, yresolution=94, resolutionunit=2], baseline, precision 8, 1080x1920, components 3
 fotos/ia/10-pensativo-sala-noche.jpg 200
 fotos/ia/10-pensativo-sala-noche.jpg: JPEG image data, Exif Standard: [TIFF image data, little-endian, direntries=6, orientation=upper-left, xresolution=86, yresolution=94, resolutionunit=2], baseline, precision 8, 1080x1920, components 3
+fotos/ia/11-brazos-cruzados-blazer.jpg 200
+fotos/ia/11-brazos-cruzados-blazer.jpg: JPEG image data, Exif Standard: [TIFF image data, little-endian, direntries=6, orientation=upper-left, xresolution=86, yresolution=94, resolutionunit=2], baseline, precision 8, 1080x1920, components 3
