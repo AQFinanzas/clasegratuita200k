@@ -337,7 +337,7 @@ form .btn{width:100%}
   <a class="btn" id="mbBtn" href="#"></a>
 </div>
 
-<footer class="foot">© <span id="yr">2026</span> Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· v17</span></footer>
+<footer class="foot">© <span id="yr">2026</span> Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· v18</span></footer>
 
 <script>
 /* ======================= CONFIGURACIÓN (solo edita aquí) ======================= */
@@ -684,7 +684,18 @@ function renderLive(){
     try { await vt(player.setMuted(m)); if (!m) await vt(player.setVolume(1)); } catch(e){}
     const p = screen.querySelector(".pill"); if (p && !m) p.remove();
   }
-  bVol.addEventListener("click", () => setMute(!muted));
+  // v18: el botón lee el estado REAL del reproductor (Vimeo a veces se silencia solo al arrancar)
+  bVol.addEventListener("click", async () => {
+    let real = muted;
+    try { const m = await vt(player.getMuted(), 1500, muted); const v = await vt(player.getVolume(), 1500, 1); real = !!m || v === 0; } catch(e){}
+    setMute(!real);
+  });
+  function pedirSonido(){
+    muted = true; bVol.innerHTML = ICON.off;
+    if (screen.querySelector(".pill")) return;
+    const pill = document.createElement("button"); pill.type = "button"; pill.className = "pill"; pill.innerHTML = ICON.off + "Toca aquí para activar el sonido";
+    pill.addEventListener("click", () => setMute(false)); screen.appendChild(pill);
+  }
   // tocar el video: activa el sonido y, si está detenido, lo pone a andar en el minuto de la transmisión
   shield.addEventListener("click", async () => {
     if (muted) setMute(false);
@@ -717,12 +728,12 @@ function renderLive(){
       await vt(player.setMuted(false)); await vt(player.setVolume(1)); await vt(player.play(), 3000);
       // si el navegador no dejó arrancar con sonido (no responde), se intenta sin sonido
       if (await vt(player.getPaused(), 2500, true)) throw new Error("bloqueado");
+      // v18: arrancó, pero el navegador pudo dejarlo sin sonido: se revisa el estado real y se pide un toque
+      try { const mm = await vt(player.getMuted(), 1500, false); const vv = await vt(player.getVolume(), 1500, 1); if (mm || vv === 0) pedirSonido(); } catch(e){}
     }
     catch(e){
       // el navegador bloqueó el sonido: arranca sin sonido y pide un toque
-      try { await vt(player.setMuted(true)); await vt(player.play(), 3000); muted = true; bVol.innerHTML = ICON.off;
-        const pill = document.createElement("button"); pill.type = "button"; pill.className = "pill"; pill.innerHTML = ICON.off + "Toca aquí para activar el sonido";
-        pill.addEventListener("click", () => setMute(false)); screen.appendChild(pill);
+      try { await vt(player.setMuted(true)); await vt(player.play(), 3000); pedirSonido();
       } catch(e2){
         // el celular bloqueó todo (p. ej. modo ahorro de batería): un toque para entrar
         showEnter();
