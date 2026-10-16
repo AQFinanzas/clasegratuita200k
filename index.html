@@ -421,8 +421,9 @@ const urlDate = dateFromUrl();
 const urlTel = (qs.get("tel") || qs.get("telefono") || "").replace(/\D/g, "");
 const forceRoom = qs.get("r") === "1" || qs.get("acceso") === "1";
 
-// si su clase anterior ya cerró y llega con un enlace nuevo, se registra de nuevo para la nueva fecha
-if (reg && reg.fecha && urlDate && Date.now() >= atCol(reg.fecha, CONFIG.HORA_CLASE) + DUR * 1000) reg = null;
+// v19: MEMORIA EN CERO. Cuando la clase de su registro ya terminó, se borra el registro guardado:
+// en el siguiente lanzamiento la persona se registra de nuevo (queda en la base de datos de esa clase).
+if (reg && reg.fecha && Date.now() >= atCol(reg.fecha, CONFIG.HORA_CLASE) + DUR * 1000) { try { localStorage.removeItem(KEY); } catch(e){} reg = null; }
 // enlace personal (correo / WhatsApp): ?r=1&nombre=Ana&fecha=AAAA-MM-DD → entra directo en cualquier dispositivo
 if (forceRoom && qs.get("nombre") && !(CONFIG.MODO_REVISION && !qs.get("prueba"))) {
   const n = qs.get("nombre").trim().split(/\s+/)[0].slice(0, 30);
