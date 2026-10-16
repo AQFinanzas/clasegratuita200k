@@ -17,10 +17,10 @@ jobs:
           for f in publicaciones/_entrada/*.url; do
             dest=$(head -n1 "$f"); url=$(sed -n 2p "$f")
             mkdir -p "$(dirname "$dest")"
-            curl -sSL -o "$dest" "$url" && echo "ok $dest" || echo "falló $dest"
+            code=$(curl -sSL -o "$dest" -w "%{http_code}" "$url"); echo "$dest $code" >> publicaciones/_entrada/log.txt; file "$dest" >> publicaciones/_entrada/log.txt
             git rm -q "$f"
           done
       - name: Guardar
         run: |
           git config user.name "aq-bot"; git config user.email "bot@aqfinanzas.com"
-          git add -A publicaciones && git commit -m "Imagen traída al kit" && git push || echo "sin cambios"
+          git add -A publicaciones fotos && git commit -m "Imagen traída al kit" && git push || echo "sin cambios"
