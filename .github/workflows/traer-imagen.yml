@@ -1,0 +1,26 @@
+name: Traer imagen al kit
+on:
+  push:
+    branches: [marca-aq]
+    paths: ['publicaciones/_entrada/*.url']
+permissions:
+  contents: write
+jobs:
+  traer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: marca-aq
+      - name: Descargar imágenes
+        run: |
+          for f in publicaciones/_entrada/*.url; do
+            dest=$(head -n1 "$f"); url=$(sed -n 2p "$f")
+            mkdir -p "$(dirname "$dest")"
+            curl -sSL -o "$dest" "$url" && echo "ok $dest" || echo "falló $dest"
+            git rm -q "$f"
+          done
+      - name: Guardar
+        run: |
+          git config user.name "aq-bot"; git config user.email "bot@aqfinanzas.com"
+          git add -A publicaciones && git commit -m "Imagen traída al kit" && git push || echo "sin cambios"
