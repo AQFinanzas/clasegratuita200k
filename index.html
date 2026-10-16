@@ -248,7 +248,11 @@ form .btn{width:100%}
       <div class="mini" id="mini"><span>Comienza en</span><b id="miniVal">--:--:--</b></div>
     </div>
       <form id="form" novalidate>
-        <div class="row2">
+        <label for="f-correo">Correo electrónico
+          <input id="f-correo" type="email" autocomplete="email" inputmode="email" placeholder="tucorreo@gmail.com" required>
+        </label>
+        <div class="ok" id="okYa" hidden style="margin:4px 0 2px;padding:10px 12px;border-radius:10px;background:#E8F7EE;color:#0E6B35;font-weight:700;font-size:15px"></div>
+        <div class="row2" id="nameRow">
           <label for="f-nombre">Nombre
             <input id="f-nombre" autocomplete="given-name" placeholder="Ej.: María" required>
           </label>
@@ -256,9 +260,6 @@ form .btn{width:100%}
             <input id="f-apellido" autocomplete="family-name" placeholder="Ej.: Pérez" required>
           </label>
         </div>
-        <label for="f-correo">Correo electrónico
-          <input id="f-correo" type="email" autocomplete="email" inputmode="email" placeholder="tucorreo@gmail.com" required>
-        </label>
         <label for="f-tel" id="telWrap">WhatsApp
           <div class="phone">
             <select id="f-cod" aria-label="Código de país"></select>
@@ -337,7 +338,7 @@ form .btn{width:100%}
   <a class="btn" id="mbBtn" href="#"></a>
 </div>
 
-<footer class="foot">© <span id="yr">2026</span> Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· v18</span></footer>
+<footer class="foot">© <span id="yr">2026</span> Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· v19</span></footer>
 
 <script>
 /* ======================= CONFIGURACIÓN (solo edita aquí) ======================= */
@@ -353,7 +354,7 @@ const CONFIG = {
   // MODO REVISIÓN: true = la clase arranca 30 segundos después de abrir la página (para revisar).
   // ⚠️ Ponlo en false antes de publicar.
   MODO_REVISION: false,
-  // LANZAMIENTO POR COMUNIDAD: fecha de la clase (AAAA-MM-DD). El enlace ?comunidad=1 abre esta clase sin pedir registro.
+  // LANZAMIENTO POR COMUNIDAD: fecha de la clase (AAAA-MM-DD). El enlace ?comunidad=1 abre esta clase (pide registro; quien ya se registró entra con su correo).
   FECHA_LANZAMIENTO: "2026-10-15",   // próximo lanzamiento: cambiar SOLO esta fecha y quien se registró antes vuelve a ver el formulario limpio
   PEDIR_WHATSAPP: false,             // false = el formulario no pide WhatsApp (ya está en la comunidad)
   // URL de Google Apps Script que guarda el registro en el Sheet (termina en /exec)
@@ -440,10 +441,8 @@ if (viaLanzamiento && reg && reg.fecha !== CONFIG.FECHA_LANZAMIENTO) {
 }
 // enlace de la comunidad: ?comunidad=1 → entra directo a la clase del lanzamiento, sin registro
 const viaComunidad = qs.get("comunidad") === "1" && validDate(CONFIG.FECHA_LANZAMIENTO);
-if (viaComunidad) {
-  reg = { nombre: (reg && reg.nombre) || "", correo: (reg && reg.correo) || "", w: (reg && reg.w) || "", fecha: CONFIG.FECHA_LANZAMIENTO, t: Date.now() };
-  setReg(reg);
-}
+// v19: también pide registro (se quiere la base de datos). Quien ya está registrado entra solo con su correo.
+if (viaComunidad && reg && reg.fecha !== CONFIG.FECHA_LANZAMIENTO) reg = null;
 let FECHA = (viaComunidad || viaLanzamiento) ? CONFIG.FECHA_LANZAMIENTO : ((reg && reg.fecha && !qs.get("fecha")) ? reg.fecha : (urlDate || (reg && reg.fecha) || autoDate()));
 
 /* ---------- modo prueba ---------- */
@@ -466,8 +465,51 @@ function fillRegHeader(){
 
 const titleCase = s => s.toLowerCase().replace(/(^|\s)\S/g, m => m.toUpperCase());
 
+/* v19: REGISTRO UNA SOLA VEZ. Al escribir el correo se busca en el Sheet:
+   si ya está registrado, entra sin volver a escribir nada más. */
+let yaReg = null, buscando = null, buscado = "";
+const correoOk = c => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(c);
+function buscarCorreo(c){
+  if (c === buscado && buscando) return buscando;
+  buscado = c; yaReg = null;
+  const u = CONFIG.SHEET_URL + "?buscar=" + encodeURIComponent(c) + "&fecha=" + FECHA;
+  buscando = Promise.race([
+    fetch(u).then(r => r.json()).then(j => (j && j.encontrado && buscado === c) ? (yaReg = { correo: c, nombre: j.nombre || "", w: j.w || "" }) : null).catch(() => null),
+    new Promise(r => setTimeout(() => r(null), 5000))
+  ]).then(x => { pintarYa(); return x; });
+  return buscando;
+}
+function pintarYa(){
+  const on = !!(yaReg && yaReg.correo === $("f-correo").value.trim().toLowerCase());
+  $("nameRow").hidden = on;
+  $("okYa").hidden = !on;
+  if (on) $("okYa").textContent = "✓ " + (yaReg.nombre ? "¡Hola, " + yaReg.nombre + "! " : "") + "Ya estás registrado. Toca el botón para entrar.";
+  $("send").textContent = on ? "Entrar a la clase" : "Quiero reservar mi lugar";
+}
+let tBus = null;
+$("f-correo").addEventListener("input", () => {
+  clearTimeout(tBus); pintarYa();
+  const c = $("f-correo").value.trim().toLowerCase();
+  if (correoOk(c) && CONFIG.SHEET_URL) tBus = setTimeout(() => buscarCorreo(c), 500);
+});
+$("f-correo").addEventListener("blur", () => { const c = $("f-correo").value.trim().toLowerCase(); if (correoOk(c) && CONFIG.SHEET_URL) buscarCorreo(c); });
+
 $("form").addEventListener("submit", async ev => {
   ev.preventDefault();
+  {
+    const c = $("f-correo").value.trim().toLowerCase();
+    if (correoOk(c) && CONFIG.SHEET_URL && !$("nameRow").hidden && $("f-nombre").value.trim().length < 2) {
+      const b = $("send"); b.disabled = true; b.textContent = "Buscando tu registro…";
+      await buscarCorreo(c); b.disabled = false; pintarYa();
+    }
+    if (yaReg && yaReg.correo === c) {
+      reg = { nombre: yaReg.nombre, correo: c, w: yaReg.w || urlTel || "", fecha: FECHA, t: Date.now() - 60000 };
+      setReg(reg);
+      hideReg(); showRoom(); window.scrollTo({ top: 0 });
+      if (state === "live") marcarAsistencia();
+      return;
+    }
+  }
   const nombre = titleCase($("f-nombre").value.trim().replace(/\s+/g, " "));
   const apellido = titleCase($("f-apellido").value.trim().replace(/\s+/g, " "));
   const correo = $("f-correo").value.trim().toLowerCase();
