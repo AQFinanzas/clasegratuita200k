@@ -247,7 +247,7 @@ section.block{margin-top:56px}
         <label for="f-correo">Correo electrónico
           <input id="f-correo" type="email" autocomplete="email" inputmode="email" placeholder="tucorreo@gmail.com" required>
         </label>
-        <label for="f-tel">WhatsApp
+        <label for="f-tel">WhatsApp <span style="font-weight:500;font-size:12.5px;color:var(--muted)">(toca la bandera para cambiar el país)</span>
           <div class="phone">
             <select id="f-cod" aria-label="Código de país"></select>
             <input id="f-tel" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="412 1234567" required>
@@ -350,7 +350,7 @@ section.block{margin-top:56px}
   <a class="btn" href="#registro" data-go>Registrarme</a>
 </div>
 
-<footer class="foot">© 2026 Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· vivo v2</span></footer>
+<footer class="foot">© 2026 Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· vivo v3</span></footer>
 
 <script>
 /* ======================= CONFIGURACIÓN (solo edita aquí) ======================= */
@@ -415,10 +415,16 @@ document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", 
 try { new IntersectionObserver(es => es.forEach(e => $("mbar").classList.toggle("off", e.isIntersecting)), { threshold: 0.15 }).observe($("registro")); } catch(e){}
 
 /* ---------- registro ---------- */
-const COUNTRIES = [["Venezuela","+58"],["Colombia","+57"],["Perú","+51"],["México","+52"],["Argentina","+54"],["Chile","+56"],["Ecuador","+593"],["Panamá","+507"],["Rep. Dominicana","+1"],["Estados Unidos","+1"],["España","+34"],["Costa Rica","+506"],["Uruguay","+598"],["Paraguay","+595"],["Bolivia","+591"],["Guatemala","+502"],["Honduras","+504"],["El Salvador","+503"],["Nicaragua","+505"],["Puerto Rico","+1"],["Canadá","+1"],["Brasil","+55"],["Italia","+39"],["Portugal","+351"],["Alemania","+49"],["Reino Unido","+44"],["Francia","+33"]];
-const FLAG = {"Venezuela":"🇻🇪","Colombia":"🇨🇴","Perú":"🇵🇪","México":"🇲🇽","Argentina":"🇦🇷","Chile":"🇨🇱","Ecuador":"🇪🇨","Panamá":"🇵🇦","Rep. Dominicana":"🇩🇴","Estados Unidos":"🇺🇸","España":"🇪🇸","Costa Rica":"🇨🇷","Uruguay":"🇺🇾","Paraguay":"🇵🇾","Bolivia":"🇧🇴","Guatemala":"🇬🇹","Honduras":"🇭🇳","El Salvador":"🇸🇻","Nicaragua":"🇳🇮","Puerto Rico":"🇵🇷","Canadá":"🇨🇦","Brasil":"🇧🇷","Italia":"🇮🇹","Portugal":"🇵🇹","Alemania":"🇩🇪","Reino Unido":"🇬🇧","Francia":"🇫🇷"};
+const COUNTRIES = [["Venezuela","+58"],["Colombia","+57"],["Perú","+51"],["México","+52"],["Argentina","+54"],["Chile","+56"],["Ecuador","+593"],["Panamá","+507"],["Rep. Dominicana","+1"],["Estados Unidos","+1"],["España","+34"],["Costa Rica","+506"],["Uruguay","+598"],["Paraguay","+595"],["Bolivia","+591"],["Guatemala","+502"],["Honduras","+504"],["El Salvador","+503"],["Nicaragua","+505"],["Puerto Rico","+1"],["Canadá","+1"],["Brasil","+55"],["Italia","+39"],["Portugal","+351"],["Alemania","+49"],["Reino Unido","+44"],["Francia","+33"],["Curazao","+599"],["Aruba","+297"],["Trinidad y Tobago","+1"],["Cuba","+53"],["Australia","+61"],["Suiza","+41"],["Países Bajos","+31"],["Irlanda","+353"],["Japón","+81"]];
+const FLAG = {"Venezuela":"🇻🇪","Colombia":"🇨🇴","Perú":"🇵🇪","México":"🇲🇽","Argentina":"🇦🇷","Chile":"🇨🇱","Ecuador":"🇪🇨","Panamá":"🇵🇦","Rep. Dominicana":"🇩🇴","Estados Unidos":"🇺🇸","España":"🇪🇸","Costa Rica":"🇨🇷","Uruguay":"🇺🇾","Paraguay":"🇵🇾","Bolivia":"🇧🇴","Guatemala":"🇬🇹","Honduras":"🇭🇳","El Salvador":"🇸🇻","Nicaragua":"🇳🇮","Puerto Rico":"🇵🇷","Canadá":"🇨🇦","Brasil":"🇧🇷","Italia":"🇮🇹","Portugal":"🇵🇹","Alemania":"🇩🇪","Reino Unido":"🇬🇧","Francia":"🇫🇷","Curazao":"🇨🇼","Aruba":"🇦🇼","Trinidad y Tobago":"🇹🇹","Cuba":"🇨🇺","Australia":"🇦🇺","Suiza":"🇨🇭","Países Bajos":"🇳🇱","Irlanda":"🇮🇪","Japón":"🇯🇵"};
 const sel = $("f-cod");
-COUNTRIES.forEach(([n, c], i) => { const o = document.createElement("option"); o.value = i; o.textContent = `${FLAG[n] || ""} ${c}`; o.title = n; sel.appendChild(o); });
+COUNTRIES.forEach(([n, c], i) => { const o = document.createElement("option"); o.value = i; o.textContent = `${FLAG[n] || ""} ${c} ${n}`; sel.appendChild(o); });
+// la lista muestra país completo; ya elegido, el recuadro muestra solo bandera y código
+const corto = () => [...sel.options].forEach((o, i) => { const [n, c] = COUNTRIES[i]; o.textContent = o.selected ? `${FLAG[n] || ""} ${c}` : `${FLAG[n] || ""} ${c} ${n}`; });
+const largo = () => [...sel.options].forEach((o, i) => { const [n, c] = COUNTRIES[i]; o.textContent = `${FLAG[n] || ""} ${c} ${n}`; });
+corto();
+["focus", "mousedown", "touchstart"].forEach(e => sel.addEventListener(e, largo, { passive: true }));
+["change", "blur"].forEach(e => sel.addEventListener(e, corto));
 const titleCase = s => s.toLowerCase().replace(/(^|\s)\S/g, m => m.toUpperCase());
 
 function calUrl(){
