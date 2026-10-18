@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clase gratuita en vivo · Patrimonio de $200 mil USD</title>
+<meta name="description" content="Clase gratuita en vivo por Zoom con Alejandro Quiñones: cómo construir un patrimonio de mínimo $200 mil USD desde cero, incluso con poco capital.">
+<meta property="og:title" content="Clase gratuita en vivo: patrimonio de $200 mil USD desde cero">
+<meta property="og:description" content="En vivo por Zoom con Alejandro Quiñones · 7:00 p. m. Colombia / 8:00 p. m. Venezuela">
+<meta property="og:image" content="https://aqfinanzas.github.io/clasegratuita200k/vivo/alejandro.jpg">
+<meta name="theme-color" content="#0B0B5C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- Píxel de Meta -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2266317097097585');fbq('track','PageView');
+</script>
+<style>
+:root{
+  --navy:#0B0B5C; --navy-2:#141C7A; --orange:#F04A03; --orange-2:#FF6A1F;
+  --blue:#2993F7; --sky:#E8F3FE; --muted:#56608A; --line:#DCE3F2; --soft:#F5F8FD; --ok:#14773F;
+  --display:"Sora",system-ui,sans-serif; --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+html,body{margin:0}
+body{background:#fff;color:var(--navy);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+button,input,select{font:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+.eyebrow{font:700 12px/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.hl{color:var(--orange)} .bl{color:var(--blue)}
+
+/* barra superior */
+.top{border-bottom:1px solid var(--line);background:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.top img{height:50px;width:auto}
+.live{display:inline-flex;align-items:center;gap:8px;font:700 12px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:999px;background:#FFE9DF;color:var(--orange);white-space:nowrap}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 1.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(240,74,3,.55)}70%{box-shadow:0 0 0 10px rgba(240,74,3,0)}100%{box-shadow:0 0 0 0 rgba(240,74,3,0)}}
+
+/* hero + registro */
+.reg{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:start;padding-block:40px 24px}
+.hero h1{font-size:clamp(28px,4.3vw,46px);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin-top:10px}
+.lead{font-size:18px;color:var(--muted);margin:14px 0 0;max-width:54ch}
+.lead b{color:var(--navy)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font-size:14px;font-weight:600;white-space:nowrap}
+.chip.dark{background:var(--navy);border-color:var(--navy);color:#fff}
+.ticks{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:flex-start}
+.ticks svg{flex:none;margin-top:3px}
+.count{display:flex;gap:10px;margin-top:22px}
+.count div{min-width:70px;padding:10px 6px;border-radius:12px;background:var(--navy);color:#fff;text-align:center}
+.count b{display:block;font:800 26px/1 var(--display);font-variant-numeric:tabular-nums}
+.count span{display:block;margin-top:5px;font:600 10px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:#BFD9FF}
+.clbl{margin-top:22px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.clbl + .count{margin-top:8px}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(11,11,92,.45);scroll-margin-top:16px}
+.card .head{padding:22px 24px 18px;background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;position:relative;overflow:hidden}
+.card .head::after{content:"";position:absolute;right:-46px;top:-46px;width:150px;height:150px;border-radius:50%;border:26px solid var(--blue);opacity:.35}
+.tag{display:inline-block;font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;background:var(--orange);color:#fff;padding:7px 10px;border-radius:6px}
+.card .head h2{font-size:22px;line-height:1.25;margin-top:12px;position:relative;z-index:1}
+.card .head p{margin:6px 0 0;color:#D8E6FF;font-size:15px;position:relative;z-index:1}
+.card .head p b{color:#fff}
+form{padding:20px 24px 24px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:600;font-size:14px}
+input,select{width:100%;font:500 16px/1.2 var(--body);color:var(--navy);padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff}
+input:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(41,147,247,.18)}
+.phone{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:8px}
+.err{color:#C22A00;font-size:13px;font-weight:500}
+.err:empty{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 17px/1 var(--body);padding:18px 22px;border-radius:12px;text-decoration:none;cursor:pointer;border:0;background:var(--orange);color:#fff;box-shadow:0 12px 26px -12px rgba(240,74,3,.8)}
+.btn:hover{background:var(--orange-2)}
+.btn[disabled]{opacity:.7;cursor:wait}
+form .btn{width:100%}
+.priv{font-size:12px;color:var(--muted);text-align:center;margin:0}
+
+/* gracias */
+.thanks{padding:22px 24px 26px;display:grid;gap:14px}
+.steps{display:flex;gap:8px;font-size:12px;font-weight:700}
+.steps span{padding:5px 10px;border-radius:8px}
+.s-ok{background:#E9F8EF;color:var(--ok)} .s-now{background:#FFE9DF;color:var(--orange)}
+.thanks h3{font-size:22px;line-height:1.25}
+.thanks p{margin:0;color:var(--muted)}
+.btn.wa{background:#16A34A;box-shadow:0 12px 26px -12px rgba(22,163,74,.8);font-size:18px;padding:20px}
+.btn.wa:hover{background:#15803D}
+.btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line);box-shadow:none;font-size:15px;padding:14px}
+.btn.ghost:hover{background:var(--soft)}
+
+/* secciones */
+section.block{margin-top:56px}
+.shead{text-align:center;max-width:680px;margin:0 auto}
+.shead h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;margin-top:8px}
+.shead p{color:var(--muted);margin:10px 0 0}
+.pains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:26px}
+.pain{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:16px;background:var(--soft);border:1px solid var(--line)}
+.pain b{flex:none;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:#FFE9DF;color:var(--orange);font:800 16px/1 var(--display)}
+.pain p{margin:0;font-size:15.5px}
+.turn{margin:22px auto 0;max-width:640px;text-align:center;font:700 clamp(18px,2.2vw,22px)/1.4 var(--display)}
+.lgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}
+.lcard{position:relative;padding:24px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 40px -28px rgba(11,11,92,.45);overflow:hidden}
+.lcard::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--orange),var(--blue))}
+.lcard .n{font:800 13px/1 var(--display);color:var(--orange);letter-spacing:.1em}
+.lcard h3{font-size:18px;line-height:1.25;margin-top:10px}
+.lcard p{margin:6px 0 0;color:var(--muted);font-size:15px;line-height:1.5}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
+.why div{padding:20px;border-radius:16px;border:1px solid var(--line);text-align:center}
+.why .ic{width:48px;height:48px;margin:0 auto 10px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--navy),var(--navy-2))}
+.why h3{font-size:16px}
+.why p{margin:6px 0 0;font-size:14.5px;color:var(--muted)}
+.host{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;padding:34px;border-radius:24px;color:#fff;
+  background:radial-gradient(90% 120% at 100% 0%,rgba(41,147,247,.45),transparent 55%),radial-gradient(70% 90% at 0% 100%,rgba(240,74,3,.25),transparent 60%),linear-gradient(160deg,var(--navy),var(--navy-2))}
+.hphoto{position:relative}
+.hphoto::before{content:"";position:absolute;inset:12px -12px -12px 12px;border-radius:22px;background:var(--orange)}
+.hphoto img{position:relative;width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;border:3px solid #fff}
+.htext .eyebrow{color:var(--orange-2)}
+.htext h2{font-size:clamp(26px,3.2vw,34px);margin-top:8px}
+.htext p{color:#C9DBFF;font-size:16.5px;margin:10px 0 0;max-width:54ch}
+.hstats{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap}
+.hstats>div{padding-left:14px;border-left:3px solid var(--blue)}
+.hstats b{display:block;font:800 28px/1 var(--display)}
+.hstats span{font-size:13px;color:#BFD9FF}
+.faq{max-width:760px;margin:26px auto 0;display:grid;gap:10px}
+.faq details{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fff}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--orange);font:800 20px/1 var(--display)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:10px 0 0;color:var(--muted)}
+.final{margin-top:56px;padding:40px 24px;border-radius:24px;text-align:center;background:var(--soft);border:1px solid var(--line)}
+.final h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em}
+.final p{color:var(--muted);margin:10px auto 22px;max-width:52ch}
+.foot{margin-top:40px;border-top:1px solid var(--line);padding:22px 16px;color:var(--muted);font-size:13px;text-align:center}
+.mbar{display:none}
+
+@media (max-width:900px){
+  .reg{grid-template-columns:1fr;gap:26px;padding-top:24px}
+  .why{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:15px;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  body.done{padding-bottom:0}
+  .wrap{padding-inline:16px}
+  .top img{height:42px}
+  .live{font-size:10px;padding:7px 10px}
+  .hero h1{font-size:clamp(26px,7.4vw,32px)}
+  .lead{font-size:16px}
+  .chip{font-size:13px;padding:7px 10px}
+  .count div{flex:1;min-width:0}
+  .count b{font-size:24px}
+  .card{border-radius:18px}
+  .card .head{padding:18px 20px}
+  .card .head h2{font-size:20px}
+  form{padding:18px 20px 22px}
+  .phone{grid-template-columns:128px minmax(0,1fr)}
+  section.block{margin-top:40px}
+  .pains,.lgrid{grid-template-columns:1fr;gap:10px}
+  .host{grid-template-columns:1fr;gap:26px;margin-inline:-16px;padding:30px 20px;border-radius:0;text-align:center}
+  .hphoto{width:150px;margin:0 auto}
+  .hphoto::before{inset:8px -8px -8px 8px}
+  .htext p{margin-inline:auto;font-size:15px}
+  .hstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .hstats>div{padding:12px 6px;border-left:0;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);text-align:center}
+  .hstats b{font-size:22px}
+  .hstats span{font-size:11.5px;display:block;margin-top:4px;line-height:1.3}
+  .final{margin-inline:-16px;border-radius:0}
+  .mbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:fixed;left:0;right:0;bottom:0;z-index:40;
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -10px 30px -18px rgba(11,11,92,.4)}
+  .mbar small{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .mbar b{font:800 19px/1.15 var(--display);font-variant-numeric:tabular-nums}
+  .mbar .btn{padding:13px 18px;font-size:15px;flex:none}
+  body.done .mbar{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="logo.png" alt="Alejandro Quiñones" width="66" height="50">
+    <span class="live"><i></i>En vivo por Zoom</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="reg">
+    <div class="hero">
+      <div class="eyebrow">Clase gratuita en vivo · 1 hora</div>
+      <h1>Cómo construir un patrimonio de <span class="hl">mínimo $200 mil USD</span> desde cero, <span class="bl">incluso con poco capital</span></h1>
+      <p class="lead">Te muestro, <b>en vivo y respondiendo tus preguntas</b>, el método que uso para invertir en la Bolsa de Nueva York con orden, paciencia y control del riesgo.</p>
+      <div class="chips">
+        <span class="chip dark" id="fechaChip">📅 22 de octubre</span>
+        <span class="chip">🇨🇴 7:00 p. m. Colombia</span>
+        <span class="chip">🇻🇪 8:00 p. m. Venezuela</span>
+      </div>
+      <div class="clbl" id="clbl">Empezamos en</div>
+      <div class="count" id="count" role="timer" aria-live="off">
+        <div><b id="cd-d">00</b><span>Días</span></div>
+        <div><b id="cd-h">00</b><span>Horas</span></div>
+        <div><b id="cd-m">00</b><span>Min</span></div>
+        <div><b id="cd-s">00</b><span>Seg</span></div>
+      </div>
+      <ul class="ticks">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14773F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Gratis, por Zoom, desde tu celular o computadora.</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14773F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>No necesitas experiencia ni una cuenta en Estados Unidos.</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14773F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Al final respondo tus preguntas en directo.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="registro">
+      <div class="head">
+        <span class="tag">Reserva tu lugar</span>
+        <h2>Regístrate gratis y recibe el enlace de Zoom</h2>
+        <p><b>22 de octubre</b> · 🇨🇴 7:00 p. m. · 🇻🇪 8:00 p. m.</p>
+      </div>
+
+      <form id="form" novalidate>
+        <label for="f-nombre">Nombre y apellido
+          <input id="f-nombre" autocomplete="name" placeholder="María Pérez" required>
+        </label>
+        <label for="f-correo">Correo electrónico
+          <input id="f-correo" type="email" autocomplete="email" inputmode="email" placeholder="tucorreo@gmail.com" required>
+        </label>
+        <label for="f-tel">WhatsApp
+          <div class="phone">
+            <select id="f-cod" aria-label="Código de país"></select>
+            <input id="f-tel" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="412 1234567" required>
+          </div>
+        </label>
+        <div class="err" id="err" role="alert"></div>
+        <button class="btn" type="submit" id="send">Quiero mi lugar gratis</button>
+        <p class="priv">Tus datos están seguros. Solo los uso para enviarte el acceso a la clase.</p>
+      </form>
+
+      <div class="thanks" id="thanks" hidden>
+        <div class="steps"><span class="s-ok">✓ 1 Registro</span><span class="s-now">2 Comunidad</span></div>
+        <h3 id="thTitle">Falta 1 paso para recibir tu enlace de Zoom</h3>
+        <p>El enlace de la clase se comparte <b>solo dentro de la comunidad de WhatsApp</b>. Si no entras, no lo recibes.</p>
+        <a class="btn wa" id="waBtn" href="https://go.wha.link/b22oMb" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.7-1.2 2.2 2.2 0 00.2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>
+          Entrar a la comunidad
+        </a>
+        <a class="btn ghost" id="calBtn" href="#" target="_blank" rel="noopener">📅 Agregar a mi calendario</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="block" aria-labelledby="t-pain">
+    <div class="shead">
+      <div class="eyebrow">Esta clase es para ti si…</div>
+      <h2 id="t-pain">Trabajas duro, pero tu dinero no crece</h2>
+    </div>
+    <div class="pains">
+      <div class="pain"><b>1</b><p>Llevas años trabajando y, si mañana dejaras de hacerlo, no podrías vivir mucho tiempo de lo que tienes.</p></div>
+      <div class="pain"><b>2</b><p>Logras ahorrar algo, pero sientes que la inflación y los gastos se lo comen poco a poco.</p></div>
+      <div class="pain"><b>3</b><p>Quieres invertir en la bolsa, pero no sabes por dónde empezar ni en quién confiar.</p></div>
+      <div class="pain"><b>4</b><p>Crees que para invertir necesitas mucho dinero o ser experto en finanzas.</p></div>
+    </div>
+    <p class="turn">La diferencia no es cuánto ganas. Es <span class="hl">qué haces con tu excedente</span> y con qué método.</p>
+  </section>
+
+  <section class="block" aria-labelledby="t-learn">
+    <div class="shead">
+      <div class="eyebrow">En vivo vas a descubrir</div>
+      <h2 id="t-learn">Lo que vas a llevarte de esta clase</h2>
+    </div>
+    <div class="lgrid">
+      <article class="lcard"><span class="n">01</span><h3>La ruta a los $200 mil USD</h3><p>Las etapas para construir patrimonio desde cero, explicadas con números simples.</p></article>
+      <article class="lcard"><span class="n">02</span><h3>Empezar con poco capital</h3><p>Por qué el monto inicial importa menos que la constancia y el método.</p></article>
+      <article class="lcard"><span class="n">03</span><h3>El Método RCR</h3><p>Rentabilidad, Consistencia y Riesgo: el marco que uso para tomar decisiones en la bolsa.</p></article>
+      <article class="lcard"><span class="n">04</span><h3>Los errores que frenan a la mayoría</h3><p>Lo que hace que tanta gente pierda dinero o nunca empiece, y cómo evitarlo.</p></article>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="t-why">
+    <div class="shead">
+      <div class="eyebrow">Por qué en vivo</div>
+      <h2 id="t-why">Una hora conmigo, sin rodeos</h2>
+    </div>
+    <div class="why">
+      <div><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span><h3>Preguntas en directo</h3><p>Escribes tu duda en el chat y te respondo en la clase.</p></div>
+      <div><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><h3>Ejemplos en pantalla</h3><p>Te muestro cómo analizo una inversión, paso a paso.</p></div>
+      <div><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Sin promesas mágicas</h3><p>Educación financiera seria: método, paciencia y control del riesgo.</p></div>
+    </div>
+  </section>
+
+  <section class="block host" aria-labelledby="t-host">
+    <div class="hphoto"><img src="alejandro.jpg" alt="Alejandro Quiñones" width="220" height="220" loading="lazy"></div>
+    <div class="htext">
+      <div class="eyebrow">Tu instructor</div>
+      <h2 id="t-host">Alejandro Quiñones</h2>
+      <p>Estratega de inversión, conferencista internacional y autor de <em>La Arquitectura del Dinero</em>. Creador del Método RCR, con el que acompaño a personas de toda Latinoamérica a invertir con criterio.</p>
+      <div class="hstats">
+        <div><b>+15</b><span>años en finanzas</span></div>
+        <div><b>+4.000</b><span>alumnos</span></div>
+        <div><b>RCR</b><span>método propio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="t-faq">
+    <div class="shead">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2 id="t-faq">Antes de registrarte</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿La clase tiene algún costo?</summary><p>No. Es completamente gratuita. Solo necesitas registrarte para recibir el enlace.</p></details>
+      <details><summary>¿Necesito experiencia o saber de finanzas?</summary><p>No. La clase está pensada para empezar desde cero, con un lenguaje sencillo.</p></details>
+      <details><summary>¿Necesito una cuenta bancaria en Estados Unidos?</summary><p>No. En la clase te explico cómo se puede invertir en la Bolsa de Nueva York desde Latinoamérica.</p></details>
+      <details><summary>¿Cómo recibo el enlace de Zoom?</summary><p>Al registrarte, entra a la comunidad de WhatsApp: ahí comparto el enlace de Zoom el día de la clase, junto con los avisos.</p></details>
+      <details><summary>¿Puedo verla desde el celular?</summary><p>Sí. Puedes entrar desde la app de Zoom en tu celular o desde la computadora. Te recomiendo usar audífonos.</p></details>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2>Tu patrimonio empieza con una decisión</h2>
+    <p>Reserva tu lugar gratis y conéctate en vivo el <b>22 de octubre</b> a las 7:00 p. m. Colombia · 8:00 p. m. Venezuela.</p>
+    <a class="btn" href="#registro" data-go>Quiero mi lugar gratis</a>
+  </section>
+</main>
+
+<div class="mbar" id="mbar">
+  <div><small>Empezamos en</small><b id="mbVal">--:--:--</b></div>
+  <a class="btn" href="#registro" data-go>Registrarme</a>
+</div>
+
+<footer class="foot">© 2026 Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· vivo v1</span></footer>
+
+<script>
+/* ======================= CONFIGURACIÓN (solo edita aquí) ======================= */
+const CONFIG = {
+  FECHA_CLASE: "2026-10-22",       // AAAA-MM-DD (fecha de la clase en vivo)
+  FECHA_TEXTO: "22 de octubre",    // como se muestra en la página
+  HORA_CLASE: 19,                  // hora Colombia (24 h)
+  DURACION_MIN: 90,
+  ORIGEN: "landing_zoom",          // así se marca en el Sheet para compararla con el formulario de Meta
+  SHEET_URL: "https://script.google.com/macros/s/AKfycbwdsqAvt7qFhJuZEwRt924vOOiC7yQlxNDVxgj-CXKDgUcn3w_CnQz9Kvg_LIl-1lwdng/exec",
+  COMUNIDAD_URL: "https://go.wha.link/b22oMb"
+};
+/* =============================================================================== */
+
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2, "0");
+const qs = new URLSearchParams(location.search);
+const START = Date.parse(`${CONFIG.FECHA_CLASE}T${pad(CONFIG.HORA_CLASE)}:00:00-05:00`);
+const END = START + CONFIG.DURACION_MIN * 60e3;
+const SRC = (qs.get("utm_content") || qs.get("src") || qs.get("utm_source") || "directo").replace(/[^a-z0-9_.-]/gi, "").slice(0, 40) || "directo";
+
+document.querySelectorAll("[data-fecha]").forEach(e => e.textContent = CONFIG.FECHA_TEXTO);
+
+/* ---------- evento de visita (pestaña Eventos del Sheet) ---------- */
+function evento(ev){
+  try {
+    const k = "aq_vivo_" + ev + "_" + new Date().toISOString().slice(0, 10);
+    if (localStorage.getItem(k)) return; localStorage.setItem(k, "1");
+  } catch(e){}
+  try { fetch(CONFIG.SHEET_URL + "?ev=" + ev + "&src=" + SRC + "&p=landing_zoom", { mode: "no-cors", keepalive: true }); } catch(e){}
+}
+evento("landing_zoom_abrio");
+
+/* ---------- contador ---------- */
+function tick(){
+  const left = Math.floor((START - Date.now()) / 1000);
+  if (left > 0) {
+    $("cd-d").textContent = pad(Math.floor(left / 86400));
+    $("cd-h").textContent = pad(Math.floor(left % 86400 / 3600));
+    $("cd-m").textContent = pad(Math.floor(left % 3600 / 60));
+    $("cd-s").textContent = pad(left % 60);
+    $("cd-d").parentNode.hidden = left < 86400;
+    $("mbVal").textContent = (left >= 86400 ? Math.floor(left / 86400) + "d " : "") + pad(Math.floor(left % 86400 / 3600)) + ":" + pad(Math.floor(left % 3600 / 60)) + ":" + pad(left % 60);
+  } else if (Date.now() < END) {
+    $("clbl").textContent = "La clase ya comenzó · entra a la comunidad para el enlace";
+    $("count").hidden = true; $("mbVal").textContent = "En vivo ahora";
+  } else {
+    $("clbl").textContent = "Esta clase ya terminó. Regístrate y te aviso de la próxima.";
+    $("count").hidden = true; $("mbVal").textContent = "Próxima clase pronto";
+  }
+}
+tick(); setInterval(tick, 1000);
+
+/* ---------- botones que llevan al registro ---------- */
+document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", ev => {
+  ev.preventDefault();
+  $("registro").scrollIntoView({ behavior: "smooth", block: "start" });
+  setTimeout(() => { if (!$("form").hidden) $("f-nombre").focus({ preventScroll: true }); }, 500);
+}));
+
+/* ---------- registro ---------- */
+const COUNTRIES = [["Venezuela","+58"],["Colombia","+57"],["Perú","+51"],["México","+52"],["Argentina","+54"],["Chile","+56"],["Ecuador","+593"],["Panamá","+507"],["Rep. Dominicana","+1"],["Estados Unidos","+1"],["España","+34"],["Costa Rica","+506"],["Uruguay","+598"],["Paraguay","+595"],["Bolivia","+591"],["Guatemala","+502"],["Honduras","+504"],["El Salvador","+503"],["Nicaragua","+505"],["Puerto Rico","+1"],["Canadá","+1"],["Brasil","+55"],["Italia","+39"],["Portugal","+351"],["Alemania","+49"],["Reino Unido","+44"],["Francia","+33"]];
+const sel = $("f-cod");
+COUNTRIES.forEach(([n, c], i) => { const o = document.createElement("option"); o.value = i; o.textContent = `${c} ${n}`; sel.appendChild(o); });
+const titleCase = s => s.toLowerCase().replace(/(^|\s)\S/g, m => m.toUpperCase());
+
+function calUrl(){
+  const f = d => new Date(d).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const p = new URLSearchParams({ action: "TEMPLATE", text: "Clase gratuita en vivo · Patrimonio de $200 mil USD",
+    dates: f(START) + "/" + f(END),
+    details: "Clase en vivo por Zoom con Alejandro Quiñones. El enlace de Zoom se comparte en la comunidad de WhatsApp: " + CONFIG.COMUNIDAD_URL,
+    location: "Zoom (enlace en la comunidad de WhatsApp)" });
+  return "https://calendar.google.com/calendar/render?" + p.toString();
+}
+
+function mostrarGracias(nombre){
+  $("form").hidden = true; $("thanks").hidden = false; document.body.classList.add("done");
+  if (nombre) $("thTitle").textContent = nombre.split(" ")[0] + ", falta 1 paso para recibir tu enlace de Zoom";
+  $("calBtn").href = calUrl();
+  $("registro").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+$("waBtn").addEventListener("click", () => evento("landing_zoom_clic_comunidad"));
+
+// quien ya se registró en este celular ve directamente el paso 2
+try { const r = JSON.parse(localStorage.getItem("aq_vivo_reg") || "null"); if (r && r.fecha === CONFIG.FECHA_CLASE) mostrarGracias(r.nombre); } catch(e){}
+
+$("form").addEventListener("submit", async ev => {
+  ev.preventDefault();
+  const nombreCompleto = titleCase($("f-nombre").value.trim().replace(/\s+/g, " "));
+  const correo = $("f-correo").value.trim().toLowerCase();
+  const tel = $("f-tel").value.replace(/\D/g, "").replace(/^0+/, "");
+  const [pais, codigo] = COUNTRIES[sel.value];
+  const err = $("err");
+  const show = (msg, el) => { err.textContent = msg; el.focus(); };
+  if (nombreCompleto.length < 2) return show("Escribe tu nombre.", $("f-nombre"));
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correo)) return show("Revisa tu correo: debe tener el formato nombre@correo.com.", $("f-correo"));
+  if (tel.length < 7) return show("Revisa tu WhatsApp: escribe solo el número, sin el código del país.", $("f-tel"));
+  err.textContent = "";
+  const btn = $("send"); btn.disabled = true; btn.textContent = "Reservando tu lugar…";
+
+  const partes = nombreCompleto.split(" ");
+  const whatsapp = codigo.replace("+", "") + tel;
+  const data = {
+    nombre: nombreCompleto, nombre_solo: partes[0], apellido: partes.slice(1).join(" "), correo,
+    pais, codigo, telefono: whatsapp, whatsapp,
+    fecha_clase: CONFIG.FECHA_CLASE, zona_horaria: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
+    origen: CONFIG.ORIGEN, campana: qs.get("utm_campaign") || SRC,
+    pagina: location.href.split("?")[0]
+  };
+  try {
+    let sent = false;
+    try { sent = navigator.sendBeacon && navigator.sendBeacon(CONFIG.SHEET_URL, new URLSearchParams(data)); } catch(e){}
+    if (!sent) await Promise.race([fetch(CONFIG.SHEET_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(data), keepalive: true }).catch(() => {}), new Promise(r => setTimeout(r, 3000))]);
+  } catch(e){}
+  try { fbq("track", "CompleteRegistration", { content_name: "Clase en vivo " + CONFIG.FECHA_CLASE }); } catch(e){}
+  try { localStorage.setItem("aq_vivo_reg", JSON.stringify({ nombre: partes[0], fecha: CONFIG.FECHA_CLASE })); } catch(e){}
+  mostrarGracias(partes[0]);
+});
+</script>
+</body>
+</html>
