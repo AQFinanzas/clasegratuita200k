@@ -28,20 +28,37 @@ body{font-family:'Inter';-webkit-font-smoothing:antialiased;position:relative}
 """
 
 def portada():
+    import random
+    random.seed(11)
+    # velas: suben, caen hacia el stop y rebotan
+    pts=[620,600,575,590,560,540,560,600,640,670,690,660,640,610,590,560,530,500,470,450]
+    velas=""; x=40
+    for i,c in enumerate(pts):
+        o = pts[i-1] if i else c+15
+        up = c < o
+        top, bot = min(o,c), max(o,c)
+        col = "#ffffff" if up else "#01005A"
+        velas += f'<line x1="{x+15}" y1="{top-22}" x2="{x+15}" y2="{bot+22}" stroke="{col}" stroke-width="4" opacity=".9"/>'
+        velas += f'<rect x="{x}" y="{top}" width="30" height="{max(10,bot-top)}" rx="5" fill="{col}" opacity=".95"/>'
+        x += 50
     return f"""<html><head><style>{BASE}
-body{{background:linear-gradient(165deg,#FF7A3D 0%,{NAR} 42%,#C23A00 100%)}}
-.giant{{position:absolute;top:150px;left:-30px;font:900 300px 'Inter Display';letter-spacing:-.04em;color:#ffffff1c;line-height:.9;white-space:nowrap}}
-.foto{{position:absolute;right:-70px;bottom:250px;height:1060px}}
-.fade{{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,#C23A0000 0%,#9E2F00EE 55%,#7A2400 100%)}}
+body{{background:linear-gradient(165deg,#FF7A3D 0%,{NAR} 45%,#C23A00 100%)}}
+.giant{{position:absolute;top:120px;left:-24px;font:900 300px 'Inter Display';letter-spacing:-.04em;color:#ffffff14;line-height:.9;white-space:nowrap}}
+.chart{{position:absolute;left:0;right:0;top:-40px}}
+.stoplbl{{position:absolute;right:72px;top:{-40+700-62}px;background:#01005A;color:#fff;font:800 26px Inter;letter-spacing:.12em;padding:12px 22px;border-radius:14px}}
 .txt{{position:absolute;left:72px;right:72px;bottom:170px;color:#fff;z-index:4}}
-.tag{{font:700 22px Inter;letter-spacing:.16em;color:#FFD9C7;margin-bottom:22px}}
+.tag{{font:700 22px Inter;letter-spacing:.16em;color:#FFE1D3;margin-bottom:22px}}
 .txt .h{{font-size:86px}}
 .blk{{display:inline-block;background:{MAR};color:#fff;padding:0 22px 6px;border-radius:18px;margin-top:10px}}
 .pill{{color:#fff;border:2px solid #ffffff55}}
 .sw i{{background:#fff;color:{NAR}}} .sw,.handle{{color:#fff}}
 </style></head><body>
 <div class="giant">RIESGO<br>RIESGO</div>
-<img class="foto" src="{FOTO}"><div class="fade"></div>
+<svg class="chart" width="1080" height="760" viewBox="0 0 1080 760">
+<line x1="40" y1="700" x2="1040" y2="700" stroke="#01005A" stroke-width="6" stroke-dasharray="22 14"/>
+{velas}
+</svg>
+<div class="stoplbl">STOP LOSS</div>
 <div class="top"><img src="{LW}"><div class="pill">1/{N}</div></div>
 <div class="txt"><div class="tag">MÉTODO RCR · LA R DE RIESGO</div>
 <div class="h">Antes de pensar cuánto vas a ganar, define cuánto puedes<br><span class="blk">perder.</span></div></div>

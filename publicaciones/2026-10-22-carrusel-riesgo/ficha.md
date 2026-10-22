@@ -1,8 +1,8 @@
 # Carrusel · Antes de ganar, define cuánto puedes perder (Método RCR · Riesgo)
 
-- 7 láminas 1080×1350. Portada naranja dominante (foto IA 11-brazos-cruzados-blazer recortada, "RIESGO" gigante); interiores crema #FBF8F2 con azul marino y naranja.
+- 7 láminas 1080×1350. Portada naranja dominante SIN foto (velas + línea de STOP LOSS, "RIESGO" gigante); interiores crema #FBF8F2 con azul marino y naranja.
 - Feed: naranja → reel B/N → carrusel azul USA (progresión de tonos).
-- Contenido con IA: sí (foto de la portada generada con IA).
+- Contenido con IA: no.
 
 ## Copy
 ¿Sabes cuánto estás dispuesto a perder antes de comprar una acción? 🤔
