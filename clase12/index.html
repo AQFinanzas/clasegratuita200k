@@ -236,6 +236,10 @@ section.block{margin-top:56px}
 .ask .opts{display:flex;flex-wrap:wrap;gap:8px}
 .ask button{border:1.5px solid var(--line);background:#fff;color:var(--navy);border-radius:10px;padding:10px 14px;font-weight:600;cursor:pointer}
 .ask button:hover{border-color:var(--blue)}
+.promesa{margin-top:12px;font-size:18px;line-height:1.4;font-weight:600;color:var(--navy)}
+.promesa b{color:var(--orange);font-weight:800}
+@media (max-width:640px){.top .wrap{padding-block:6px}.top img{height:36px}.reg .hero .who.dup{display:none}.reg .eyebrow{display:none}.reg .hero h1{font-size:clamp(20px,5.6vw,23px)}.reg .host-top span{display:none}}
+@media (max-width:640px){.promesa{font-size:15px;margin-top:6px;line-height:1.35}}
 </style>
 </head>
 <body>
@@ -253,7 +257,8 @@ section.block{margin-top:56px}
       <div class="host-top"><img src="foto-saco.jpg" alt="Alejandro Quiñones" width="88" height="88"><div><b>Alejandro Quiñones</b><span>Estratega de inversión · Más de 15 años de experiencia · Autor de <em>La Arquitectura del Dinero</em></span></div></div>
       <div class="who" id="who" hidden></div>
       <div class="eyebrow">Clase gratuita en vivo · 1 hora</div>
-      <h1 id="h1">Si ya tienes tus ahorros, <span class="hl">ponlos a trabajar</span> y <span class="bl">protege lo que construiste para tu retiro</span></h1>
+      <h1 id="h1">Ahorrar no te va a pagar <span class="hl">el retiro, la universidad de tus hijos</span> <span class="bl">ni tu libertad financiera</span></h1>
+      <p class="promesa" id="promesa">En esta clase te muestro el plan para construir un patrimonio de <b>US$200.000</b>, aunque empieces desde cero.</p>
       <p class="lead" id="lead">Te muestro, <b>en vivo y respondiendo tus preguntas</b>, cómo invierto en la Bolsa de Nueva York con orden, paciencia y control del riesgo, para que tu dinero no se quede quieto perdiendo valor.</p>
       <div class="chips" id="chips"></div>
       <div class="ask" id="ask" hidden>
@@ -420,7 +425,29 @@ if (!["venezolanos", "locales", "venezuela"].includes(S)) S = "";
 try { const g = JSON.parse(localStorage.getItem("aq_l12_seg") || "null"); if (!S && g && g.p === P) S = g.s; } catch(e){}
 
 /* ---------- textos según quién lo lee ---------- */
+/* prueba de 3 promesas: a cada visitante le toca una (siempre la misma); se mide en Clarity (etiqueta promesa) y en el registro */
+const PV = (() => {
+  let v = null;
+  try { const q = new URLSearchParams(location.search).get("prom"); if (["1","2","3"].includes(q)) return q; } catch(e){}
+  try { v = localStorage.getItem("aq_l12_prom"); } catch(e){}
+  if (!["1","2","3"].includes(v)) { v = String(1 + Math.floor(Math.random() * 3)); try { localStorage.setItem("aq_l12_prom", v); } catch(e){} }
+  return v;
+})();
+function promesa(pre, ve){
+  const P = {
+    "1": [(ve ? "Ahorrar en dólares" : "Ahorrar") + ' no te va a pagar <span class="hl">el retiro, la universidad de tus hijos</span> <span class="bl">ni tu libertad financiera</span>',
+          'En esta clase te muestro el plan para construir un patrimonio de <b>US$200.000</b>, aunque empieces desde cero.'],
+    "2": ['La inflación <span class="hl">se come tus ' + (ve ? "dólares" : "ahorros") + '</span> <span class="bl">cada año</span>',
+          'Aprende a construir un patrimonio de <b>US$200.000</b> desde cero para tu retiro, la universidad de tus hijos y tu libertad financiera.'],
+    "3": ['Deja de solo ahorrar y <span class="hl">empieza a construir patrimonio</span>',
+          'El plan para llegar a <b>US$200.000</b> desde cero, para tu retiro, la universidad de tus hijos y tu libertad financiera.']
+  };
+  const [h, p] = P[PV];
+  $("h1").innerHTML = pre ? pre + h.charAt(0).toLowerCase() + h.slice(1) : h;
+  $("promesa").innerHTML = p;
+}
 function pintar(){
+  promesa("", false);
   const pa = PAISES[P];
   const who = $("who");
   if (pa && S === "venezolanos") { who.textContent = `🇻🇪 Para venezolanos en ${pa.d} ${pa.f}`; who.hidden = false; }
@@ -428,15 +455,15 @@ function pintar(){
   else who.hidden = true;
 
   if (S === "venezuela") {
-    $("h1").innerHTML = 'Ahorrar en dólares <span class="hl">ya no es suficiente</span>';
+    promesa("", true);
     $("lead").innerHTML = 'Te muestro, <b>en vivo y respondiendo tus preguntas</b>, cómo poner esos dólares a crecer en la Bolsa de Nueva York, aunque estés en Venezuela, con orden, paciencia y control del riesgo.';
     $("tick2").textContent = "No necesitas una cuenta en Estados Unidos: te explico cómo hacerlo desde Venezuela.";
   } else if (S === "venezolanos" && pa) {
-    $("h1").innerHTML = `Venezolano en ${pa.d}: ya reconstruiste tu vida. <span class="hl">Ahora protege lo que construiste</span> <span class="bl">para tu retiro</span>`;
+    promesa(`Venezolano en ${pa.d}: `, false);
     $("lead").innerHTML = `Saliste, trabajaste duro y hoy tienes algo ahorrado. Te muestro, <b>en vivo y respondiendo tus preguntas</b>, cómo poner esos ahorros a trabajar en la Bolsa de Nueva York desde ${pa.d}, con orden y control del riesgo.`;
     $("tick2").textContent = `No necesitas una cuenta en Estados Unidos: te explico cómo hacerlo desde ${pa.d}.`;
   } else if (pa) {
-    $("h1").innerHTML = `${pa.d}: si ya tienes tus ahorros y no sabes dónde ponerlos, <span class="hl">ponlos a trabajar</span> <span class="bl">y protege tu retiro</span>`;
+    promesa(`${pa.d}: `, false);
     $("lead").innerHTML = `Te muestro, <b>en vivo y respondiendo tus preguntas</b>, cómo invertir desde ${pa.d} en la Bolsa de Nueva York con orden, paciencia y control del riesgo, para que tu dinero no se quede quieto perdiendo valor.`;
     $("tick2").textContent = `No necesitas experiencia: te explico cómo hacerlo desde ${pa.d}.`;
   }
@@ -595,7 +622,7 @@ $("form").addEventListener("submit", async ev => {
     nombre: nombreCompleto, nombre_solo: partes[0], apellido: partes.slice(1).join(" "), correo,
     pais, codigo, telefono: whatsapp, whatsapp,
     fecha_clase: CONFIG.FECHA_CLASE, zona_horaria: tzLocal,
-    origen: CONFIG.ORIGEN, campana: seg() + "_" + AD,
+    origen: CONFIG.ORIGEN, campana: seg() + "_" + AD + "_P" + PV, promesa: "P" + PV,
     pagina: location.href.split("?")[0]
   };
   try {
@@ -605,7 +632,7 @@ $("form").addEventListener("submit", async ev => {
   } catch(e){}
   evento("registro");
   try {
-    fbq("track", "Lead", { content_name: "Clase " + CONFIG.FECHA_CLASE, content_category: seg() });
+    fbq("track", "Lead", { content_name: "Clase " + CONFIG.FECHA_CLASE, content_category: seg(), promesa: "P" + PV });
     fbq("track", "CompleteRegistration", { content_name: "Clase en vivo " + CONFIG.FECHA_CLASE });
   } catch(e){}
   try { window.clarity && clarity("set", "registro", seg()); } catch(e){}
@@ -615,9 +642,9 @@ $("form").addEventListener("submit", async ev => {
 
 pintar();
 /* en celular, el texto y los horarios bajan debajo del formulario */
-try { if (matchMedia("(max-width:640px)").matches) { const ex = document.querySelector(".extra"); ex.prepend($("chips")); ex.prepend($("lead")); } } catch(e){}
+try { if (matchMedia("(max-width:640px)").matches) { const ex = document.querySelector(".extra"); ex.prepend($("chips")); ex.prepend($("lead")); document.querySelector(".card .head h2").textContent = "Regístrate gratis y recibe el Zoom"; if (S === "venezolanos" || S === "locales") $("who").classList.add("dup"); } } catch(e){}
 evento("visita");
-try { window.clarity && (clarity("set", "pais", P || "XX"), clarity("set", "segmento", S || "sin"), clarity("set", "anuncio", AD)); } catch(e){}
+try { window.clarity && (clarity("set", "pais", P || "XX"), clarity("set", "segmento", S || "sin"), clarity("set", "anuncio", AD), clarity("set", "promesa", "P" + PV)); } catch(e){}
 tick(); setInterval(tick, 1000);
 </script>
 </body>
