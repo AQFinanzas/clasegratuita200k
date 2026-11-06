@@ -201,6 +201,28 @@ section.block{margin-top:56px}
   .mbar.off{transform:translateY(110%)}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+/* celular: el formulario se ve en la primera pantalla (6-nov) */
+@media (max-width:640px){
+  .reg{padding-top:12px;row-gap:14px}
+  .reg .host-top{gap:10px;margin-bottom:8px}
+  .reg .host-top img{width:46px;height:46px;border-width:2px;box-shadow:0 0 0 2px var(--orange)}
+  .reg .host-top b{font-size:15px}
+  .reg .host-top span{font-size:11.5px;line-height:1.3}
+  label[for="f-tel"] span{display:none}
+  .reg .who{margin-bottom:0}
+  .hero h1{font-size:clamp(21px,6vw,25px);margin-top:6px}
+  .hero .lead,.hero .chips{display:none}
+  .extra .lead{display:block;margin-top:0}
+  .extra .chips{display:flex;margin:10px 0 4px}
+  .card .head{padding:12px 18px}
+  .card .head .tag{display:none}
+  .card .head h2{font-size:17.5px;margin-top:0}
+  .card .head p{font-size:13.5px;margin-top:3px}
+  form{padding:12px 18px 16px;gap:10px}
+  label{gap:4px;font-size:13.5px}
+  input,select{padding:11px 12px}
+}
 </style>
 <style>
 .host-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
@@ -592,6 +614,8 @@ $("form").addEventListener("submit", async ev => {
 });
 
 pintar();
+/* en celular, el texto y los horarios bajan debajo del formulario */
+try { if (matchMedia("(max-width:640px)").matches) { const ex = document.querySelector(".extra"); ex.prepend($("chips")); ex.prepend($("lead")); } } catch(e){}
 evento("visita");
 try { window.clarity && (clarity("set", "pais", P || "XX"), clarity("set", "segmento", S || "sin"), clarity("set", "anuncio", AD)); } catch(e){}
 tick(); setInterval(tick, 1000);
