@@ -549,8 +549,16 @@ $("form").addEventListener("submit", async ev => {
   ev.preventDefault();
   const nombreCompleto = titleCase($("f-nombre").value.trim().replace(/\s+/g, " "));
   const correo = $("f-correo").value.trim().toLowerCase();
-  const tel = $("f-tel").value.replace(/\D/g, "").replace(/^0+/, "");
   const [pais, codigo] = COUNTRIES[sel.value];
+  /* si la persona escribió el número con el código del país, se quita para no repetirlo */
+  const NAC = { "Venezuela":10, "Colombia":10, "Perú":9, "México":10, "Argentina":10, "Chile":9, "Ecuador":9, "Panamá":8, "Rep. Dominicana":10, "Estados Unidos":10, "España":9, "Costa Rica":8, "Puerto Rico":10, "Canadá":10 };
+  const cc = codigo.replace("+", "");
+  let tel = $("f-tel").value.replace(/\D/g, "").replace(/^0+/, "");
+  if (tel.startsWith(cc)) {
+    const resto = tel.slice(cc.length).replace(/^0+/, "");
+    const L = NAC[pais];
+    if (L ? (resto.length === L && tel.length !== L) : resto.length >= 8) tel = resto;
+  }
   const err = $("err");
   const show = (msg, el) => { err.textContent = msg; el.focus(); };
   if (nombreCompleto.length < 2) return show("Escribe tu nombre.", $("f-nombre"));
