@@ -354,7 +354,7 @@ section.block{margin-top:56px}
   <a class="btn" href="#registro" data-go>Registrarme</a>
 </div>
 
-<footer class="foot">© 2026 Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· clase12 v4</span></footer>
+<footer class="foot">© 2026 Alejandro Quiñones · Excedente · Contenido educativo, no constituye asesoría financiera. <span style="opacity:.5">· clase12 v5</span></footer>
 
 <script>
 /* ======================= CONFIGURACIÓN (solo edita aquí) ======================= */
@@ -510,6 +510,13 @@ const sel = $("f-cod");
 COUNTRIES.forEach(([n, c], i) => { const o = document.createElement("option"); o.value = i; o.textContent = `${FLAG[n] || ""} ${c} ${n}`; sel.appendChild(o); });
 function corto(){ [...sel.options].forEach((o, i) => { const [n, c] = COUNTRIES[i]; o.textContent = o.selected ? `${FLAG[n] || ""} ${c}` : `${FLAG[n] || ""} ${c} ${n}`; }); }
 const largo = () => [...sel.options].forEach((o, i) => { const [n, c] = COUNTRIES[i]; o.textContent = `${FLAG[n] || ""} ${c} ${n}`; });
+/* código del WhatsApp según el país (anuncio → zona horaria del teléfono → Venezuela) */
+const TZ2COD = { "America/Caracas":"Venezuela","America/Bogota":"Colombia","America/Lima":"Perú","America/Mexico_City":"México","America/Monterrey":"México","America/Merida":"México","America/Cancun":"México","America/Tijuana":"México","America/Chihuahua":"México","America/Hermosillo":"México","America/Mazatlan":"México","America/Argentina/Buenos_Aires":"Argentina","America/Santiago":"Chile","America/Guayaquil":"Ecuador","America/Panama":"Panamá","America/Santo_Domingo":"Rep. Dominicana","America/New_York":"Estados Unidos","America/Chicago":"Estados Unidos","America/Denver":"Estados Unidos","America/Los_Angeles":"Estados Unidos","America/Phoenix":"Estados Unidos","America/Detroit":"Estados Unidos","America/Indiana/Indianapolis":"Estados Unidos","America/Anchorage":"Estados Unidos","Pacific/Honolulu":"Estados Unidos","Europe/Madrid":"España","Atlantic/Canary":"España","America/Costa_Rica":"Costa Rica","America/Montevideo":"Uruguay","America/Asuncion":"Paraguay","America/La_Paz":"Bolivia","America/Guatemala":"Guatemala","America/Tegucigalpa":"Honduras","America/El_Salvador":"El Salvador","America/Managua":"Nicaragua","America/Puerto_Rico":"Puerto Rico","America/Toronto":"Canadá","America/Vancouver":"Canadá","America/Sao_Paulo":"Brasil","Europe/Rome":"Italia","Europe/Lisbon":"Portugal","Europe/Berlin":"Alemania","Europe/London":"Reino Unido","Europe/Paris":"Francia","America/Curacao":"Curazao","America/Aruba":"Aruba","America/Port_of_Spain":"Trinidad y Tobago","America/Havana":"Cuba","Australia/Sydney":"Australia","Europe/Zurich":"Suiza","Europe/Amsterdam":"Países Bajos","Europe/Dublin":"Irlanda","Asia/Tokyo":"Japón" };
+(function(){
+  const nombre = (PAISES[P] && P !== "VE" ? COUNTRIES[PAISES[P].cod][0] : "") || TZ2COD[tzLocal] || (PAISES[P] ? COUNTRIES[PAISES[P].cod][0] : "") || "Venezuela";
+  const i = COUNTRIES.findIndex(([n]) => n === nombre);
+  sel.value = String(i < 0 ? 0 : i);
+})();
 corto();
 ["focus", "mousedown", "touchstart"].forEach(e => sel.addEventListener(e, largo, { passive: true }));
 ["change", "blur"].forEach(e => sel.addEventListener(e, corto));
