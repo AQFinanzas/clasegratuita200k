@@ -458,7 +458,10 @@ function pintar(){
 
 /* ---------- eventos al Sheet (pestaña Eventos) ---------- */
 const seg = () => `${P || "XX"}-${S || "sin"}`;
+/* robots (revisión de anuncios de Meta, navegadores automáticos, vistas previas): no cuentan */
+const ROBOT = (() => { try { return navigator.webdriver === true || /HeadlessChrome|facebookexternalhit|meta-externalagent|Facebot|bot|crawler|spider|Lighthouse|PhantomJS/i.test(navigator.userAgent || ""); } catch(e){ return false; } })();
 function evento(ev, unaVez = true){
+  if (ROBOT) return;
   try {
     const k = "aq_l12_" + ev + "_" + new Date().toISOString().slice(0, 10);
     if (unaVez) { if (localStorage.getItem(k)) return; localStorage.setItem(k, "1"); }
@@ -494,7 +497,7 @@ function tick(){
 /* ---------- botones que llevan al registro ---------- */
 document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", ev => {
   ev.preventDefault();
-  evento("clic_registro", false);
+  evento("clic_registro");
   $("registro").scrollIntoView({ behavior: "smooth", block: "start" });
   setTimeout(() => { if (!$("form").hidden) $("f-nombre").focus({ preventScroll: true }); }, 500);
 }));
