@@ -76,6 +76,14 @@ def icon(name, size=120, fg=None, acc=None):
         d.line([z*.5, z*.6, z*.62, z*.92], fill=a, width=w)
     elif name == 'steps':
         d.line([z*.1, z*.85, z*.35, z*.85, z*.35, z*.62, z*.6, z*.62, z*.6, z*.38, z*.85, z*.38, z*.85, z*.15], fill=c, width=w, joint='curve'); d.ellipse([z*.78, z*.08, z*.92, z*.22], fill=a)
+    elif name == 'house':
+        d.line([z*.1, z*.5, z*.5, z*.14, z*.9, z*.5], fill=c, width=w, joint='curve'); d.line([z*.2, z*.42, z*.2, z*.88, z*.8, z*.88, z*.8, z*.42], fill=c, width=w, joint='curve')
+        d.rectangle([z*.42, z*.6, z*.58, z*.88], fill=a)
+    elif name == 'store':
+        d.line([z*.1, z*.38, z*.18, z*.14, z*.82, z*.14, z*.9, z*.38, z*.1, z*.38], fill=c, width=w, joint='curve'); d.line([z*.16, z*.42, z*.16, z*.88, z*.84, z*.88, z*.84, z*.42], fill=c, width=w, joint='curve')
+        d.rectangle([z*.4, z*.6, z*.6, z*.88], fill=a)
+    elif name == 'bolt':
+        d.polygon([(z*.58, z*.06), (z*.2, z*.56), (z*.48, z*.56), (z*.4, z*.94), (z*.8, z*.42), (z*.52, z*.42)], fill=a, outline=c)
     return im.resize((size, size), Image.LANCZOS)
 
 def icon_card(name, label, bg=None, fg=None, edge=None):
@@ -134,7 +142,7 @@ def full_card(lines, sub=None, theme=None):
         else: d.text((W/2, y), t, font=f, fill=ACC if col == 'nar' else TX, anchor='mm')
         y += 165
     d.rectangle([W/2 - 60, 560, W/2 + 60, 572], fill=ACC)
-    if sub: d.text((W/2, y + 40), sub, font=F_B(44), fill=(200, 205, 230), anchor='mm')
+    if sub: d.text((W/2, y + 40), sub, font=F_B(50), fill=(NAR if theme == 'white' else (200, 205, 230)), anchor='mm')
     return im
 
 # ---------- cierre ----------

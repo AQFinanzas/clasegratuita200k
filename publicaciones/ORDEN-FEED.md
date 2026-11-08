@@ -22,4 +22,5 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 | 2026-11-09 10:00 | Post | Así reparto cada $100 (50/20/20/10) | Infografía oscura con cajas punteadas e íconos de colores | 2026-11-09-post-asi-reparto-cada-100 |
 | 2026-11-09 13:00 | Reel | Camioneta o bicicleta (el ahorro es solo una pieza) | Portada = fotograma seg. 1,2 (¿SOLO AHORRANDO?) | 2026-11-09-reel-camioneta-o-bicicleta |
 | 2026-11-09 16:00 | Carrusel (7) | 5 gastos silenciosos que se comen tu excedente | Notas adhesivas amarillas a mano sobre papel; cierre azul marino | 2026-11-09-carrusel-gastos-silenciosos |
+| 2026-11-09 19:00 | Reel | Liquidez: ¿y si mañana lo quieres de vuelta? (Clase Landing 14:54–17:30) | Portada = fotograma seg. 25,5 (3 chips + TENGO LIQUIDEZ) | 2026-11-09-reel-liquidez |
 | (pendiente) | Post | La escalera del patrimonio | Crema con escalera azul marino/naranja | 2026-11-09-post-escalera-patrimonio |
