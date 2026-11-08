@@ -262,7 +262,7 @@ for n in range(N):
         inv = Image.eval(m, lambda v: 255 - v)
         ba = back.getchannel('A'); back.putalpha(Image.fromarray((np.asarray(ba, dtype=np.uint16) * np.asarray(inv, dtype=np.uint16) // 255).astype(np.uint8)))
         frame = Image.alpha_composite(frame, back)
-    if rec:
+    if rec and not any(ev['type'] == 'bigword' and ev['s'] <= t < ev['e'] for ev in events):
         frame.alpha_composite(REC, (60, 240))
     # tarjetas a pantalla completa / cierre
     covering = False
