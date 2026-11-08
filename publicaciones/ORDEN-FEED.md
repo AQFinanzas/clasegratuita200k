@@ -14,6 +14,7 @@ No poner etiqueta "REEL" arriba a la derecha (choca con el ícono de Instagram).
 | 2026-11-07 | Reel | ¿Cuánto te queda al final de mes? (de la clase en Vimeo) | Portada = fotograma seg. 7,6 ("¿CUÁNTO TE QUEDA?" naranja detrás) | 2026-11-07-reel-cuanto-te-queda |
 | 2026-11-08 08:00 | Post | ¿Hasta qué mes llegas? (dolor, calendario) | Crema editorial sin foto, calendario + trazo naranja a mano | 2026-11-08-post-hasta-que-mes |
 | 2026-11-08 19:00 | Reel | La taza financiera | Portada = fotograma seg. 3,9 (B/N RECUERDO + LLENAR LA TAZA) | 2026-11-08-reel-taza-financiera |
+| (pendiente, él decide) | Reel | Esto no es un casino | Portada sugerida = fotograma seg. 0,8 (dados + UN CASINO) | pendiente-reel-no-es-un-casino |
 | (pendiente) | Reel | Las 3 causas de tus problemas financieros | Cinematográfico oscuro, foto IA seria | reel-3-causas |
 
 Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja dominante; buen siguiente: claro/blanco o azul marino.
