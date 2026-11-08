@@ -18,3 +18,8 @@ No poner etiqueta "REEL" arriba a la derecha (choca con el ícono de Instagram).
 | (pendiente) | Reel | Las 3 causas de tus problemas financieros | Cinematográfico oscuro, foto IA seria | reel-3-causas |
 
 Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja dominante; buen siguiente: claro/blanco o azul marino.
+| 2026-11-09 07:00 | Reel | Más del 80 % del adulto mayor termina dependiendo de otros | Portada = fotograma seg. 4,4 (+80 % naranja) | 2026-11-09-reel-80-por-ciento |
+| 2026-11-09 10:00 | Post | Así reparto cada $100 (50/20/20/10) | Infografía oscura con cajas punteadas e íconos de colores | 2026-11-09-post-asi-reparto-cada-100 |
+| 2026-11-09 13:00 | Reel | Camioneta o bicicleta (el ahorro es solo una pieza) | Portada = fotograma seg. 1,2 (¿SOLO AHORRANDO?) | 2026-11-09-reel-camioneta-o-bicicleta |
+| 2026-11-09 16:00 | Carrusel (7) | 5 gastos silenciosos que se comen tu excedente | Notas adhesivas amarillas a mano sobre papel; cierre azul marino | 2026-11-09-carrusel-gastos-silenciosos |
+| (pendiente) | Post | La escalera del patrimonio | Crema con escalera azul marino/naranja | 2026-11-09-post-escalera-patrimonio |
