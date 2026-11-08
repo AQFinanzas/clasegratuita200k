@@ -1,0 +1,42 @@
+<html><head><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;position:relative;background:#FBF8F2;color:#01005A}
+.grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:multiply}
+.top{position:absolute;top:60px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center}
+.top img{height:76px}
+.tag{font:600 20px Inter;letter-spacing:.16em;color:#01005A}
+.kick{position:absolute;left:72px;top:200px;font:700 20px Inter;letter-spacing:.18em;color:#F04A03}
+.h{position:absolute;left:72px;right:72px;top:240px;font-family:'Inter Display','Inter';font-weight:800;font-size:74px;line-height:1.04;letter-spacing:-.025em}
+.h em{font-family:Lora;font-style:italic;font-weight:600;color:#F04A03;letter-spacing:-.01em;font-size:84px}
+.cal{position:absolute;left:72px;right:72px;top:560px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.c{height:138px;border-radius:18px;background:#fff;border:1.5px solid #E4DED2;position:relative;padding:18px 20px;box-shadow:0 2px 0 #E9E3D7}
+.c span{font:700 22px Inter;letter-spacing:.12em;color:#01005A}
+.c i{position:absolute;right:20px;bottom:12px;font:800 54px 'Inter Display';font-style:normal;color:#01005A14}
+.c.live{background:#01005A;border-color:#01005A}
+.c.live span{color:#fff} .c.live i{color:#ffffff30}
+.c.gone{background:transparent;border:1.5px dashed #CFC6B5;box-shadow:none}
+.c.gone span{color:#B9AE9A} .c.gone i{color:#00000008}
+.note{position:absolute;font-family:Lora;font-style:italic;font-weight:500;font-size:30px;color:#F04A03;line-height:1.15}
+svg{position:absolute;left:0;top:0;overflow:visible}
+.foot{position:absolute;left:72px;right:72px;top:1080px}
+.line{width:80px;height:5px;background:#F04A03;border-radius:3px;margin-bottom:24px}
+.p{font:400 31px/1.42 Inter;color:#3D4170;max-width:900px}
+.p b{color:#01005A;font-weight:700}
+.bottom{position:absolute;left:72px;right:72px;bottom:56px;display:flex;justify-content:space-between;font:600 22px Inter;color:#8A8270;letter-spacing:.02em}
+</style></head><body>
+<svg class="grain" width="1080" height="1350"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .45  0 0 0 0 .4  0 0 0 .18 0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<div class="top"><img src="logoc.png"><div class="tag">PATRIMONIO</div></div>
+<div class="kick">UNA PREGUNTA INCÓMODA</div>
+<div class="h">Si mañana dejas de cobrar,<br><em>¿hasta qué mes llegas?</em></div>
+<div class="cal"><div class="c live"><span>ENE</span><i>1</i></div><div class="c"><span>FEB</span><i>2</i></div><div class="c gone"><span>MAR</span><i>3</i></div><div class="c gone"><span>ABR</span><i>4</i></div><div class="c gone"><span>MAY</span><i>5</i></div><div class="c gone"><span>JUN</span><i>6</i></div><div class="c gone"><span>JUL</span><i>7</i></div><div class="c gone"><span>AGO</span><i>8</i></div><div class="c gone"><span>SEP</span><i>9</i></div><div class="c gone"><span>OCT</span><i>10</i></div><div class="c gone"><span>NOV</span><i>11</i></div><div class="c gone"><span>DIC</span><i>12</i></div></div>
+<svg width="1080" height="1350">
+ <path d="M548 572 C 560 700, 548 742, 530 742" fill="none"/>
+ <path d="M300 556 q 115 -10 222 4 q 24 70 6 140 q -110 14 -226 4 q -20 -70 -2 -148" fill="none" stroke="#F04A03" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M790 522 C 740 520, 690 530, 665 552" fill="none" stroke="#F04A03" stroke-width="4" stroke-linecap="round"/>
+ <path d="M668 528 L 662 556 L 690 552" fill="none" stroke="#F04A03" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div class="note" style="left:800px;top:492px">¿y después?</div><div class="note" style="left:331px;top:640px;font-size:28px">hasta aquí</div>
+<div class="foot"><div class="line"></div><div class="p">Tu nivel de riqueza no es cuánto ganas. <b>Es cuánto tiempo puedes vivir sin trabajar.</b> Si la respuesta te dio miedo, es hora de empezar a llenar tu taza.</div></div>
+<div class="bottom"><span>Guárdalo y respóndete con sinceridad</span><span>@aqfinanzas</span></div>
+</body></html>
