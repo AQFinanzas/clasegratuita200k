@@ -1,4 +1,4 @@
-# Reel · Esto no es un casino (PENDIENTE: Alejandro dice cuándo se sube)
+# Reel · Esto no es un casino (PUBLICADO 8-nov-2026 9:22 a. m. en IG y FB)
 
 - Fuente: "Clase Especial Gratuita Excedente" (Vimeo 1234400521), min 4:35–6:05
 - Video: `reel.mp4` (42 s, 1080×1920, −14 LUFS)
