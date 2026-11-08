@@ -2,7 +2,7 @@
 
 - Fuente: clase "Clase Landing Llamadas 1 a 1 (A con video)" de Vimeo (min 8:39–9:33)
 - Video: `reel.mp4` (36 s, 1080×1920, sin música, −14 LUFS)
-- Portada: fotograma del segundo 7,6 del reel (`portada-seg07.jpg`), elegida por Claude
+- Portada: nueva (`portada.jpg`), fotograma del seg. 26,6 de la toma con boca cerrada + "¿CUÁNTO TE QUEDA AL FINAL DE MES?"
 - Publicado en Instagram (Reel) y Facebook (Reel) vía Metricool el 7-nov-2026
 
 ## Copy
