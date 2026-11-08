@@ -11,6 +11,7 @@ No poner etiqueta "REEL" arriba a la derecha (choca con el ícono de Instagram).
 | 2026-10-16 20:00 | Carrusel (7) | Ahorrar vs invertir (tortuga → cohete) | Blanco limpio sin foto en portada; foto solo en cierre | 2026-10-19-ahorrar-vs-invertir |
 | 2026-10-22 | Reel | Mentalidad: el dinero como conflicto en casa (nueva edición) | Portada = fotograma seg. 22 (B/N "RECUERDO" + DINERO naranja) | 2026-10-22-reel-mentalidad-editado |
 | 2026-10-22 19:00 | Carrusel (7) | Antes de ganar, define cuánto puedes perder (Riesgo RCR) | Naranja dominante sin foto (velas + STOP) + RIESGO gigante; interiores crema | 2026-10-22-carrusel-riesgo |
+| 2026-11-07 | Reel | ¿Cuánto te queda al final de mes? (de la clase en Vimeo) | Portada = fotograma seg. 7,6 ("¿CUÁNTO TE QUEDA?" naranja detrás) | 2026-11-07-reel-cuanto-te-queda |
 | (pendiente) | Reel | Las 3 causas de tus problemas financieros | Cinematográfico oscuro, foto IA seria | reel-3-causas |
 
 Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja dominante; buen siguiente: claro/blanco o azul marino.
