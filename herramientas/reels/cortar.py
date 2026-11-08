@@ -24,6 +24,6 @@ json.dump(c, open('cut.json','w'), ensure_ascii=False)
 G = "eq=contrast=1.06:saturation=1.05:gamma=0.98,colorbalance=rs=0.03:gs=0.01:bs=-0.03:rm=0.02:bm=-0.02,hqdn3d=1.5:1.5:3:3,vignette=PI/5"
 subprocess.run(f'ffmpeg -y -v error -f concat -safe 0 -i parts/v.txt -vf "setpts=PTS/{SP},fps=30,{G},tpad=stop_mode=clone:stop_duration={TAIL}" -c:v libx264 -preset fast -crf 12 base.mp4', shell=True, check=True)
 subprocess.run(f'ffmpeg -y -v error -f concat -safe 0 -i parts/m.txt -vf "setpts=PTS/{SP},fps=30,tpad=stop_mode=clone:stop_duration={TAIL},format=gray" -c:v ffv1 mate/mate.mkv', shell=True, check=True)
-subprocess.run(f'ffmpeg -y -v error -f concat -safe 0 -i parts/b.txt -af "atempo={SP},highpass=f=80,afftdn=nf=-25,deesser=i=0.3,apad=pad_dur={TAIL}" -ar 48000 -c:a pcm_s16le voz.wav', shell=True, check=True)
+subprocess.run(f'ffmpeg -y -v error -f concat -safe 0 -i parts/b.txt -af "atempo={SP},highpass=f=80,afftdn=nf=-25,deesser=i=0.3,equalizer=f=3000:t=q:w=1:g=2,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=150,apad=pad_dur={TAIL}" -ar 48000 -c:a pcm_s16le voz.wav', shell=True, check=True)
 N = int(subprocess.run(['ffprobe','-v','error','-count_frames','-select_streams','v','-show_entries','stream=nb_read_frames','-of','csv=p=0','base.mp4'],capture_output=True,text=True).stdout)
 print('dur', round(acc / SP, 2), 'frames base', N)

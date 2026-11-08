@@ -25,9 +25,9 @@ def easeOut(x):
 def rr(d, box, r, fill): d.rounded_rectangle(box, r, fill=fill)
 
 # ---------- íconos de línea ----------
-def icon(name, size=120):
+def icon(name, size=120, fg=None, acc=None):
     S = 4; im = Image.new('RGBA', (size * S, size * S), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
-    w = 7 * S; c = BL; a = NAR; z = size * S
+    w = 7 * S; c = tuple(fg) if fg else BL; a = tuple(acc) if acc else (NAR if c != NAR else MAR); z = size * S
     def L(*p, col=c): d.line([q * S for q in p], fill=col, width=w, joint='curve')
     if name == 'phone':
         d.rounded_rectangle([z*.3, z*.08, z*.7, z*.92], 14*S, outline=c, width=w); d.line([z*.44, z*.8, z*.56, z*.8], fill=a, width=w)
@@ -64,19 +64,32 @@ def icon(name, size=120):
     elif name == 'rocket':
         d.line([z*.2, z*.8, z*.75, z*.25], fill=c, width=w); d.line([z*.75, z*.25, z*.88, z*.12], fill=a, width=w)
         d.line([z*.55, z*.25, z*.75, z*.25, z*.75, z*.45], fill=c, width=w, joint='curve')
+    elif name == 'dice':
+        d.rounded_rectangle([z*.12, z*.12, z*.88, z*.88], 16*S, outline=c, width=w)
+        for (x, y) in [(.3,.3),(.7,.7),(.5,.5),(.3,.7),(.7,.3)]: d.ellipse([z*(x-.07), z*(y-.07), z*(x+.07), z*(y+.07)], fill=a if (x, y) == (.5, .5) else c)
+    elif name == 'heart':
+        d.polygon([(z*.5, z*.88), (z*.1, z*.45), (z*.9, z*.45)], fill=None, outline=c)
+        d.pieslice([z*.08, z*.15, z*.52, z*.6], 140, 360, fill=None, outline=c, width=w); d.pieslice([z*.48, z*.15, z*.92, z*.6], 180, 40, fill=None, outline=c, width=w)
+        d.line([z*.12, z*.47, z*.5, z*.88, z*.88, z*.47], fill=c, width=w, joint='curve'); d.line([z*.3, z*.5, z*.42, z*.5, z*.48, z*.38, z*.56, z*.62, z*.62, z*.5, z*.72, z*.5], fill=a, width=int(w*.8), joint='curve')
+    elif name == 'clover':
+        for (x, y) in [(.35,.32),(.65,.32),(.35,.62),(.65,.62)]: d.ellipse([z*(x-.16), z*(y-.16), z*(x+.16), z*(y+.16)], outline=c, width=w)
+        d.line([z*.5, z*.6, z*.62, z*.92], fill=a, width=w)
+    elif name == 'steps':
+        d.line([z*.1, z*.85, z*.35, z*.85, z*.35, z*.62, z*.6, z*.62, z*.6, z*.38, z*.85, z*.38, z*.85, z*.15], fill=c, width=w, joint='curve'); d.ellipse([z*.78, z*.08, z*.92, z*.22], fill=a)
     return im.resize((size, size), Image.LANCZOS)
 
-def icon_card(name, label):
+def icon_card(name, label, bg=None, fg=None, edge=None):
+    bg = tuple(bg) if bg else MAR; fg = tuple(fg) if fg else BL; edge = tuple(edge) if edge else AZ
     cw, ch = 196, 250
     im = Image.new('RGBA', (cw + 30, ch + 30), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     sh = Image.new('RGBA', im.size, (0, 0, 0, 0)); ImageDraw.Draw(sh).rounded_rectangle([15, 21, 15 + cw, 21 + ch], 28, fill=(0, 0, 0, 120))
     im = Image.alpha_composite(im, sh.filter(ImageFilter.GaussianBlur(8))); d = ImageDraw.Draw(im)
-    d.rounded_rectangle([15, 15, 15 + cw, 15 + ch], 28, fill=MAR + (245,))
-    d.rounded_rectangle([15, 15, 15 + cw, 15 + ch], 28, outline=AZ + (255,), width=3)
-    ic = icon(name, 120); im.alpha_composite(ic, (15 + (cw - 120) // 2, 15 + 32))
+    d.rounded_rectangle([15, 15, 15 + cw, 15 + ch], 28, fill=bg + (245,))
+    d.rounded_rectangle([15, 15, 15 + cw, 15 + ch], 28, outline=edge + (255,), width=3)
+    ic = icon(name, 120, fg, MAR if bg == NAR else None); im.alpha_composite(ic, (15 + (cw - 120) // 2, 15 + 32))
     fs = 30
     while F_XB(fs).getlength(label) > cw - 24 and fs > 16: fs -= 1
-    d.text((15 + cw / 2, 15 + 205), label, font=F_XB(fs), fill=BL, anchor='mm')
+    d.text((15 + cw / 2, 15 + 205), label, font=F_XB(fs), fill=fg, anchor='mm')
     return im
 
 # ---------- subtítulos ----------
@@ -107,8 +120,9 @@ def subtitle_img(txt, keyword, scale):
     return im
 
 # ---------- tarjeta a pantalla completa ----------
-def full_card(lines, sub=None):
-    im = Image.new('RGBA', (W, H), MAR + (255,)); d = ImageDraw.Draw(im)
+def full_card(lines, sub=None, theme=None):
+    BG = NAR if theme == 'orange' else (BL if theme == 'white' else MAR); TX = MAR if theme == 'white' else BL; BLK = MAR if theme == 'orange' else NAR; ACC = BL if theme == 'orange' else NAR
+    im = Image.new('RGBA', (W, H), BG + (255,)); d = ImageDraw.Draw(im)
     # trama sutil
     for y in range(0, H, 6): d.line([0, y, W, y], fill=(255, 255, 255, 6))
     total = len(lines) * 150; y = H / 2 - total / 2 + 60
@@ -116,10 +130,10 @@ def full_card(lines, sub=None):
         f = F_BLACK(128)
         while f.getlength(t) > 940: f = F_BLACK(f.size - 4)
         if col == 'blk':
-            tw = f.getlength(t); rr(d, [W/2 - tw/2 - 30, y - 82, W/2 + tw/2 + 30, y + 72], 24, NAR); d.text((W/2, y), t, font=f, fill=BL, anchor='mm')
-        else: d.text((W/2, y), t, font=f, fill=NAR if col == 'nar' else BL, anchor='mm')
+            tw = f.getlength(t); rr(d, [W/2 - tw/2 - 30, y - 82, W/2 + tw/2 + 30, y + 72], 24, BLK); d.text((W/2, y), t, font=f, fill=BL, anchor='mm')
+        else: d.text((W/2, y), t, font=f, fill=ACC if col == 'nar' else TX, anchor='mm')
         y += 165
-    d.rectangle([W/2 - 60, 560, W/2 + 60, 572], fill=NAR)
+    d.rectangle([W/2 - 60, 560, W/2 + 60, 572], fill=ACC)
     if sub: d.text((W/2, y + 40), sub, font=F_B(44), fill=(200, 205, 230), anchor='mm')
     return im
 
@@ -153,15 +167,21 @@ def recuerdo_chip():
 cache = {}
 for i, ev in enumerate(events):
     t = ev['type']
-    if t == 'icon': cache[i] = icon_card(ev['icon'], ev['label'])
-    elif t == 'card': cache[i] = full_card(ev['lines'], ev.get('sub'))
+    if t == 'icon': cache[i] = icon_card(ev['icon'], ev['label'], ev.get('bg'), ev.get('fg'), ev.get('edge'))
+    elif t == 'img':
+        im0 = Image.open(ev['img']).convert('RGBA'); w0 = ev.get('w', 360); cache[i] = im0.resize((w0, int(im0.height * w0 / im0.width)), Image.LANCZOS)
+    elif t == 'band':
+        bh = 110; f = F_XB(54); tw = f.getlength(ev['text'])
+        im = Image.new('RGBA', (int(tw) + 100, bh), (0, 0, 0, 0)); dd = ImageDraw.Draw(im); dd.rounded_rectangle([0, 0, im.width - 1, bh - 1], 48, fill=tuple(ev.get('bg', NAR)) + (250,)); dd.text((im.width / 2, bh / 2), ev['text'], font=f, fill=tuple(ev.get('fg', BL)), anchor='mm'); cache[i] = im
+    elif t == 'card': cache[i] = full_card(ev['lines'], ev.get('sub'), ev.get('theme'))
     elif t == 'end': cache[i] = end_card(ev['cta'])
     elif t == 'chip': cache[i] = chip(ev['text'], ev['ok'])
     elif t == 'bigword':
         lines = ev['text'].split('\n'); f = F_BLACK(ev.get('size', 190))
         while max(f.getlength(l) for l in lines) > 1000: f = F_BLACK(f.size - 6)
         lh = int(f.size * 1.02); im = Image.new('RGBA', (W, lh * len(lines) + 40), (0, 0, 0, 0)); dd = ImageDraw.Draw(im)
-        for li, l in enumerate(lines): dd.text((W/2, 20 + lh * li + lh / 2), l, font=f, fill=(NAR if li == len(lines) - 1 else BL) + (255,), anchor='mm')
+        cols = [tuple(c) for c in ev.get('colors', [BL, NAR])]
+        for li, l in enumerate(lines): dd.text((W/2, 20 + lh * li + lh / 2), l, font=f, fill=(cols[1] if li == len(lines) - 1 else cols[0]) + (255,), anchor='mm')
         cache[i] = im
 REC = recuerdo_chip()
 _f = np.ones((380, 340), np.float32); _f[:, -60:] *= np.linspace(1, 0, 60)[None]; _f[:40, :] *= np.linspace(0, 1, 40)[:, None]
@@ -200,6 +220,10 @@ for n in range(N):
         box = (box[0], box[1], box[0] + cw, box[1] + ch)
         frame = frame.resize((W, H), Image.BICUBIC, box=box); m = m.resize((W, H), Image.BILINEAR, box=box)
     reg = frame.crop((0, 1460, 340, 1840)).filter(ImageFilter.GaussianBlur(45)); reg = Image.blend(reg, Image.new('RGBA', reg.size, (10, 10, 20, 255)), 0.35); frame.paste(reg, (0, 1460), FEATH)
+    if any(ev['type'] == 'blurbg' and ev['s'] <= t < ev['e'] for ev in events):
+        ev0 = next(ev for ev in events if ev['type'] == 'blurbg' and ev['s'] <= t < ev['e'])
+        k = min(1, (t - ev0['s']) / 0.3, (ev0['e'] - t) / 0.3); bl = frame.filter(ImageFilter.GaussianBlur(28 * k))
+        frame = Image.composite(frame, bl, m)
     frame = Image.alpha_composite(frame, GRAD)
     # recuerdo (B/N)
     rec = [ev for ev in events if ev['type'] == 'recuerdo' and ev['s'] <= t < ev['e']]
@@ -222,6 +246,12 @@ for n in range(N):
             y0 = ev.get('y', 330); dy = int((1 - easeOut(p / 0.35)) * 60)
             im2 = im.copy(); im2.putalpha(im2.getchannel('A').point(lambda v: int(v * a)))
             back.alpha_composite(im2, (0, y0 + dy))
+        elif typ == 'img':
+            im = cache[i]; k = easeOutBack(p / 0.35); out_k = 1 - easeOut((t - (e - 0.25)) / 0.25) if t > e - 0.25 else 1
+            sc = max(0.01, k * out_k); iw, ih = int(im.width * sc), int(im.height * sc)
+            if iw < 4: continue
+            im2 = im.resize((iw, ih), Image.BICUBIC); cx, cy = ev['pos']
+            (front if ev.get('front') else back).alpha_composite(im2, (int(cx - iw / 2), int(cy - ih / 2)))
         elif typ == 'chip':
             im = cache[i]; k = easeOutBack(p / 0.3); dx = int((1 - k) * (-200 if ev['pos'][0] < W / 2 else 200))
             a = 1 if t < e - 0.2 else (e - t) / 0.2
@@ -242,9 +272,14 @@ for n in range(N):
             im = cache[i]
             if ev['type'] == 'card':
                 sc = 0.92 + 0.08 * easeOut(p / 0.3); iw, ih = int(W * sc), int(H * sc)
-                im2 = Image.new('RGBA', (W, H), MAR + (255,)); im2.alpha_composite(im.resize((iw, ih)), ((W - iw) // 2, (H - ih) // 2)); im = im2
+                im2 = Image.new('RGBA', (W, H), im.getpixel((5, 5))); im2.alpha_composite(im.resize((iw, ih)), ((W - iw) // 2, (H - ih) // 2)); im = im2
             im = im.copy(); im.putalpha(im.getchannel('A').point(lambda v: int(v * a)))
             frame = Image.alpha_composite(frame, im); covering = a > 0.5
+    for i, ev in enumerate(events):
+        if ev['type'] == 'band' and ev['s'] <= t < ev['e']:
+            im = cache[i]; p = t - ev['s']; dy = int((1 - easeOut(p / 0.3)) * 160); a = 1 if t < ev['e'] - 0.2 else (ev['e'] - t) / 0.2
+            im2 = im.copy(); im2.putalpha(im2.getchannel('A').point(lambda v: int(v * a))); frame.alpha_composite(im2, (int((W - im.width) / 2), ev.get('y', 1450) + dy))
+    if front.getbbox(): frame = Image.alpha_composite(frame, front)
     # subtítulos
     if not covering:
         for s, e, g in subs:
