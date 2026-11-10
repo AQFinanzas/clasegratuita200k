@@ -24,3 +24,9 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 | 2026-11-09 16:00 | Carrusel (7) | 5 gastos silenciosos que se comen tu excedente | Notas adhesivas amarillas a mano sobre papel; cierre azul marino | 2026-11-09-carrusel-gastos-silenciosos |
 | 2026-11-09 19:00 | Reel | Liquidez: ¿y si mañana lo quieres de vuelta? (Clase Landing 14:54–17:30) | Portada = fotograma seg. 25,5 (3 chips + TENGO LIQUIDEZ) | 2026-11-09-reel-liquidez |
 | (pendiente) | Post | La escalera del patrimonio | Crema con escalera azul marino/naranja | 2026-11-09-post-escalera-patrimonio |
+| 2026-11-11 07:00 | Reel | ¿Qué eliges? (1 millón vs 1 centavo que se duplica), voz clonada | Portada = fotograma con las dos opciones | 2026-11-11-reel-que-eliges |
+| 2026-11-11 10:00 | Reel | En dólares también hay inflación (Clase Landing 31:30–32:10) | Portada fotograma + título, bloque naranja | 2026-11-11-reel-dolares-inflacion |
+| 2026-11-11 13:00 | Carrusel (8) | 6 señales de que tus finanzas van mejor de lo que crees | Naranja dominante + interiores oscuros | 2026-11-11-carrusel-6-senales |
+| 2026-11-11 16:00 | Reel | Autoridad: señal CPRT martes 20-oct → +15,7 % | Gráfico + "Le di esta acción… así va hoy" | 2026-11-11-reel-autoridad-cprt |
+| 2026-11-11 19:00 | Post | La prueba del sueldo | Oscuro con foto seria (11-brazos-cruzados) | 2026-11-11-post-prueba-sueldo |
+| 2026-11-11 21:00 | Reel | Doble paracaídas: el riesgo nunca desaparece (Clase Landing 38:50–39:35) | Fotograma "NUNCA DESAPARECE" + título | 2026-11-11-reel-doble-paracaidas |
