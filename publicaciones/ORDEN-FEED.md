@@ -30,3 +30,8 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 | 2026-11-11 16:00 | Reel | Autoridad: señal CPRT martes 20-oct → +15,7 % | Gráfico + "Le di esta acción… así va hoy" | 2026-11-11-reel-autoridad-cprt |
 | 2026-11-11 19:00 | Post | La prueba del sueldo | Oscuro con foto seria (11-brazos-cruzados) | 2026-11-11-post-prueba-sueldo |
 | 2026-11-11 21:00 | Reel | Doble paracaídas: el riesgo nunca desaparece (Clase Landing 38:50–39:35) | Fotograma "NUNCA DESAPARECE" + título | 2026-11-11-reel-doble-paracaidas |
+
+## 13-nov-2026 (aprobado por Alejandro el 12-nov)
+- 7 a. m. · Carrusel «¿Todo tu dinero está en un solo lugar?» (diversificación, degradado azul, 7 láminas)
+- 10 a. m. · Reel autoridad WSC: señal del martes 27-oct (Sesión #115, Vimeo 1245858308, min 11:25–12:47), 17,65 → 19,84 (+12,4 %) al cierre del 12-nov
+- Resto del día: pendiente (se trabaja la mañana del 13-nov)
