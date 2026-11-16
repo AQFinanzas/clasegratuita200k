@@ -39,3 +39,4 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 ## 17-nov-2026 (aprobado el 16-nov)
 - 7 a. m. · Reel Flow «Bola de nieve» con música de piano (#63)
 - 10 a. m. · Reel Vimeo «¿Inviertes sin controlar tus gastos?» gimnasio y hamburguesa (Reto SAF día 1, 905607452, 2:54–3:30) (#64)
+- 1 p. m. · Post «¿Latinoamérica le ganó a Wall Street?» crema + naranja, adaptado de @personalfinanceclub (#67)
