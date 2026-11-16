@@ -35,3 +35,7 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 - 7 a. m. · Carrusel «¿Todo tu dinero está en un solo lugar?» (diversificación, degradado azul, 7 láminas)
 - 10 a. m. · Reel autoridad WSC: señal del martes 27-oct (Sesión #115, Vimeo 1245858308, min 11:25–12:47), 17,65 → 19,84 (+12,4 %) al cierre del 12-nov
 - Resto del día: pendiente (se trabaja la mañana del 13-nov)
+
+## 17-nov-2026 (aprobado el 16-nov)
+- 7 a. m. · Reel Flow «Bola de nieve» con música de piano (#63)
+- 10 a. m. · Reel Vimeo «¿Inviertes sin controlar tus gastos?» gimnasio y hamburguesa (Reto SAF día 1, 905607452, 2:54–3:30) (#64)
