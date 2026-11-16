@@ -41,3 +41,4 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 - 10 a. m. · Reel Vimeo «¿Inviertes sin controlar tus gastos?» gimnasio y hamburguesa (Reto SAF día 1, 905607452, 2:54–3:30) (#64)
 - 1 p. m. · Post «¿Latinoamérica le ganó a Wall Street?» crema + naranja, adaptado de @personalfinanceclub (#67)
 - 4 p. m. · Reel autoridad VSEC: señal del martes 3-nov (Sesión #118, Vimeo 1245858345, 4:53–5:41), 162,96 → 181,62 (+11,4 %) al cierre del 13-nov (#68)
+- 7 p. m. · Post «Metas financieras para 2027» azul marino + naranja + azul claro, adaptado de @personalfinanceclub (#69)
