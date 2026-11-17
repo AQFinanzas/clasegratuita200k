@@ -47,4 +47,4 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 ## 18-nov-2026 (trabajado el 17-nov)
 - 7 a. m. · Post «Plan A vs Plan B» degradado azul, adaptado de reel viral (#71)
 - 10 a. m. · Reel animado «Ese jean te costó 8 horas» (código, música lofi Pixabay 585360) (#74)
-- Guardados sin usar: post «3 claves para tus hijos» (#72), carrusel «Interés simple vs compuesto» (#73), reels animados 4 tipos (#75), quincena (#76), caja fuerte (#77), tubería (#78)
+- Guardados sin usar: post «3 claves para tus hijos» (#72), carrusel «Interés simple vs compuesto» (#73), reels animados 4 tipos (#75), quincena (#76), caja fuerte (#77), tubería (#78), reel Flow «Así se construye un patrimonio» impresora 3D de monedas (#79)
