@@ -49,4 +49,6 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 - 10 a. m. · Reel animado «Ese jean te costó 8 horas» (código, música lofi Pixabay 585360) (#74)
 - 1 p. m. · Post «3 claves para tus hijos» oscuro con foto real de escenario (#72)
 - 4 p. m. · Reel autoridad corto plazo HAL en corto (Sesión #111 jueves 15-oct, Wistia xtfjeej7rc, tramos 869–2140 s): +0,56 % posición, ≈11× apalancado, +6,3 % capital en 24 min (#80). Descartadas: #117 (CSCO +0,03 %) y #108 (Paper Trading)
-- Guardados sin usar: carrusel «Interés simple vs compuesto» (#73), reels animados 4 tipos (#75), quincena (#76), caja fuerte (#77), tubería (#78), reel Flow «Así se construye un patrimonio» impresora 3D de monedas (#79)
+- 7 p. m. · Carrusel «Interés simple vs compuesto» naranja, 6 láminas (#73)
+- 9 p. m. · Reel animado «Tus $10.000 en efectivo» caja fuerte, música Pixabay 588828 (#77)
+- Guardados sin usar: reels animados 4 tipos (#75), quincena (#76), tubería (#78), reel Flow «Así se construye un patrimonio» impresora 3D de monedas (#79)
