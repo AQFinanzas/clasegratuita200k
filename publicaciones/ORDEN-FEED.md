@@ -43,3 +43,8 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 - 4 p. m. · Reel autoridad VSEC: señal del martes 3-nov (Sesión #118, Vimeo 1245858345, 4:53–5:41), 162,96 → 181,62 (+11,4 %) al cierre del 13-nov (#68)
 - 7 p. m. · Post «Metas financieras para 2027» azul marino + naranja + azul claro, adaptado de @personalfinanceclub (#69)
 - 9 p. m. · Reel Flow «Reloj de arena» con música cinemática de Pixabay (#70)
+
+## 18-nov-2026 (trabajado el 17-nov)
+- 7 a. m. · Post «Plan A vs Plan B» degradado azul, adaptado de reel viral (#71)
+- 10 a. m. · Reel animado «Ese jean te costó 8 horas» (código, música lofi Pixabay 585360) (#74)
+- Guardados sin usar: post «3 claves para tus hijos» (#72), carrusel «Interés simple vs compuesto» (#73), reels animados 4 tipos (#75), quincena (#76), caja fuerte (#77), tubería (#78)
