@@ -57,4 +57,5 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 - 7 a. m. · Reel animado «Solo hay 4 tipos de personas» baterías (#75)
 - 10 a. m. · Post «¿Se está cayendo la bolsa?» SPY 1 mes/1 año/10/30 años, blanco + naranja + azul, adaptado de @personalfinanceclub (#86)
 - 1 p. m. · Reel Vimeo «Apalancamiento: ¿a tu favor o en tu contra?» (#65), portada seg. 43
+- 4 p. m. · Post autoridad FIZZ: señal martes 13-oct (Sesión #109, Vimeo 1245858215, min 4:24), 32,99 → 37,23 (+12,9 %) al 17-nov, fondo azul oscuro (#87)
 - Disponibles en Reels AQ Finanzas (hechos el 17-nov noche, sin publicar): #83 Casi llega a mi objetivo, #84 Te están robando (inflación), #85 Dame hombro
