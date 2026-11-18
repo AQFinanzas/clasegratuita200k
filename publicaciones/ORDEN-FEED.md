@@ -55,3 +55,4 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 
 ## 19-nov-2026 (trabajado el 18-nov)
 - 7 a. m. · Reel animado «Solo hay 4 tipos de personas» baterías (#75)
+- 10 a. m. · Post «¿Se está cayendo la bolsa?» SPY 1 mes/1 año/10/30 años, blanco + naranja + azul, adaptado de @personalfinanceclub (#83)
