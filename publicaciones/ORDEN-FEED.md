@@ -52,3 +52,6 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 - 7 p. m. · Carrusel «Interés simple vs compuesto» naranja, 6 láminas (#73)
 - 9 p. m. · Reel animado «Tus $10.000 en efectivo» caja fuerte, música Pixabay 588828 (#77)
 - Guardados sin usar: reels animados 4 tipos (#75), quincena (#76), tubería (#78), reel Flow «Así se construye un patrimonio» impresora 3D de monedas (#79), «Si las 7 gigantes caen» (#81), «Compra lo que te paga» (#82)
+
+## 19-nov-2026 (trabajado el 18-nov)
+- 7 a. m. · Reel animado «Solo hay 4 tipos de personas» baterías (#75)
