@@ -59,4 +59,5 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 - 1 p. m. · Reel Vimeo «Apalancamiento: ¿a tu favor o en tu contra?» (#65), portada seg. 43
 - 4 p. m. · Post autoridad FIZZ: señal martes 13-oct (Sesión #109, Vimeo 1245858215, min 4:24), 32,99 → 37,23 (+12,9 %) al 17-nov, fondo azul oscuro (#87)
 - 7 p. m. · Reel animado «Compra lo que te paga» (#82)
+- 9 p. m. · Post «¿Qué prefieres?» 95/5 vs 70/30 (53 vs 25 años), crema, adaptado de @personalfinanceclub (#88)
 - Disponibles en Reels AQ Finanzas (hechos el 17-nov noche, sin publicar): #83 Casi llega a mi objetivo, #84 Te están robando (inflación), #85 Dame hombro
