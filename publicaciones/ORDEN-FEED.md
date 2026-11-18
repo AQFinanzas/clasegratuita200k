@@ -55,4 +55,6 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 
 ## 19-nov-2026 (trabajado el 18-nov)
 - 7 a. m. · Reel animado «Solo hay 4 tipos de personas» baterías (#75)
-- 10 a. m. · Post «¿Se está cayendo la bolsa?» SPY 1 mes/1 año/10/30 años, blanco + naranja + azul, adaptado de @personalfinanceclub (#83)
+- 10 a. m. · Post «¿Se está cayendo la bolsa?» SPY 1 mes/1 año/10/30 años, blanco + naranja + azul, adaptado de @personalfinanceclub (#86)
+- 1 p. m. · Reel Vimeo «Apalancamiento: ¿a tu favor o en tu contra?» (#65), portada seg. 43
+- Disponibles en Reels AQ Finanzas (hechos el 17-nov noche, sin publicar): #83 Casi llega a mi objetivo, #84 Te están robando (inflación), #85 Dame hombro
