@@ -67,3 +67,6 @@ Próxima pieza: progresión de tonos; tras naranja (22 oct noche) evitar naranja
 - 10 a. m. · Reel Vimeo «El excedente es el aceite del motor» (#66), portada seg. 8
 - 1 p. m. · Post «Vacaciones vs Retiro» oscuro azul marino + naranja + azul, adaptado de @personalfinanceclub (#89)
 - 4 p. m. · Reel autoridad corto plazo ZM en corto (Sesión #126 jueves 19-nov, Vimeo 1248379392, tramos 590–739 s desde 11:30): +1,01 % posición, ≈16× apalancado, +16 % capital en 2 min (#90)
+- 7 p. m. · Reel animado «Así vive quien no controla su dinero» quincena (#76), portada seg. 4,2
+- 9 p. m. · Post «Estresado vs Patrimonio» crema + rojo/naranja/azul, adaptado de @personalfinanceclub (#100)
+- Guardados sin usar (22-nov): 9 reels-meme animados #91–#99 (ahorrar, billetera, para eso trabajo, bebé, monstruos, disimular, hack tarjeta, te noto raro, Fase 2 café)
